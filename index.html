@@ -229,13 +229,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 /* ─ bottom nav ─ */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:100;background:rgba(10,14,20,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line2);padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom,0px))}
 .nrow{max-width:760px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;gap:.7rem;align-items:center}
-.nb{font-family:var(--mono);font-weight:700;font-size:.8rem;border-radius:12px;padding:.75rem .95rem;min-height:48px;border:1px solid var(--line);background:var(--card);color:var(--tx);white-space:nowrap}
+.nb{font-family:var(--mono);font-weight:700;font-size:.8rem;border-radius:12px;padding:.75rem .95rem;min-height:48px;border:1px solid var(--line);background:var(--card);color:var(--tx);white-space:nowrap;position:relative;z-index:2}
 .nb.next{background:linear-gradient(120deg,var(--blue),#0c5a8d);border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(18,112,174,.4)}
 .nb:disabled{opacity:.32;pointer-events:none}
 .nmid{text-align:center;min-width:0}
 .nstep{font-family:var(--mono);font-size:.62rem;color:var(--mut);letter-spacing:.12em;display:block;margin-bottom:.3rem}
-.dots{display:flex;gap:4px;justify-content:center;flex-wrap:nowrap}
-.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.14);transition:all .25s;flex-shrink:1;min-width:4px}
+.dots{display:flex;gap:3px;justify-content:center;flex-wrap:nowrap;max-width:100%}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.14);transition:all .25s;flex-shrink:1;min-width:3px}
 .dots i.on{background:var(--gold);transform:scale(1.25);box-shadow:0 0 8px rgba(232,168,37,.6)}
 .dots i.done{background:rgba(59,158,222,.55)}
 @media(max-width:370px){.nb{padding:.75rem .7rem}}
@@ -308,7 +308,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 #sheet .it{display:flex;gap:.7rem;align-items:center;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line2);padding:.72rem .3rem;font-family:var(--mono);font-size:.8rem;color:#c4cedb;min-height:46px}
 #sheet .it b{color:var(--gold);min-width:2ch}
 #sheet .it.cur{color:#fff;background:rgba(18,112,174,.15);border-radius:8px}
-.nmid{cursor:pointer;border:0;background:transparent;padding:0}
+.nmid{cursor:pointer;border:0;background:transparent;padding:0;min-width:0;overflow:hidden}
 .khint{display:none;font-family:var(--mono);font-size:.6rem;color:var(--fnt);text-align:center;margin-top:.35rem}
 @media(min-width:960px){.khint{display:block}}
 
@@ -369,6 +369,40 @@ sup.ref:hover{text-decoration:underline}
 .pers ol{margin:0 0 0 1.1rem;font-size:.85rem;color:#c0cbd8}
 .pers ol li{margin-bottom:.45rem}
 .pers ol li::marker{color:var(--gold);font-family:var(--mono);font-weight:700}
+
+/* entrada cinematográfica portada */
+.cover>*{opacity:0;animation:covIn .7s cubic-bezier(.2,.7,.2,1) forwards}
+.cover>*:nth-child(1){animation-delay:.15s}.cover>*:nth-child(2){animation-delay:.35s}
+.cover>*:nth-child(3){animation-delay:.6s}.cover>*:nth-child(4){animation-delay:.8s}
+.cover>*:nth-child(5){animation-delay:1s}.cover>*:nth-child(6){animation-delay:1.2s}.cover>*:nth-child(7){animation-delay:1.4s}
+@keyframes covIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.cover h1 em{background:linear-gradient(110deg,#e8a825 30%,#fff2cf 50%,#e8a825 70%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:covIn .7s .35s cubic-bezier(.2,.7,.2,1) forwards, sweep 3.2s 1.4s ease-in-out infinite}
+@keyframes sweep{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.cta{animation:covIn .7s 1s forwards, ctaGlow 2.4s 1.8s ease-in-out infinite}
+@keyframes ctaGlow{0%,100%{box-shadow:0 10px 30px rgba(18,112,174,.4)}50%{box-shadow:0 10px 44px rgba(59,158,222,.75),0 0 0 6px rgba(18,112,174,.12)}}
+.pfield{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.pfield i{position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(232,168,37,.5);animation:drift 9s linear infinite;box-shadow:0 0 10px rgba(232,168,37,.5)}
+.pfield i:nth-child(2n){background:rgba(59,158,222,.45);box-shadow:0 0 10px rgba(59,158,222,.45);animation-duration:12s}
+.pfield i:nth-child(3n){width:3px;height:3px;animation-duration:15s}
+@keyframes drift{from{transform:translateY(105vh) scale(.6);opacity:0}12%{opacity:1}88%{opacity:1}to{transform:translateY(-8vh) scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.pfield{display:none}.cover>*{opacity:1;animation:none}.cover h1 em{-webkit-text-fill-color:var(--gold);animation:none}}
+/* toast ayuda */
+#hint{position:fixed;left:50%;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 18px);transform:translateX(-50%) translateY(20px);background:#0f1723;border:1px solid rgba(232,168,37,.5);border-radius:999px;padding:.6rem 1.1rem;font-family:var(--mono);font-size:.72rem;color:var(--gold);z-index:150;opacity:0;pointer-events:none;transition:all .4s;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#hint.on{opacity:1;transform:translateX(-50%)}
+/* compartir */
+.share{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;border:0;border-radius:14px;background:linear-gradient(120deg,var(--gold),#c98f14);color:#0a0e14;font-family:var(--mono);font-weight:700;font-size:.95rem;padding:1rem;min-height:52px;box-shadow:0 10px 30px rgba(232,168,37,.35);margin-top:.6rem}
+.share:active{transform:scale(.98)}
+.hshare{background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--gold);font-size:.95rem;width:38px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+/* logro final + burst */
+.done{background:linear-gradient(135deg,rgba(232,168,37,.16),rgba(18,112,174,.12));border:1.5px solid rgba(232,168,37,.55);border-radius:18px;text-align:center;padding:1.4rem 1rem;margin:0 0 1.2rem;position:relative;overflow:hidden}
+.done .dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;color:var(--gold);font-weight:700}
+.done .dn{font-family:var(--mono);font-weight:700;font-size:1.9rem;color:#fff;margin:.3rem 0 .1rem;text-shadow:0 0 24px rgba(232,168,37,.6)}
+.done p{font-size:.88rem;margin:0;color:#dbe3ec}
+#burst{position:fixed;inset:0;pointer-events:none;z-index:500}
+#burst span{position:absolute;left:50%;top:42%;width:9px;height:9px;border-radius:2px;background:var(--gold);opacity:0;animation:boom 1.15s cubic-bezier(.15,.8,.3,1) forwards}
+#burst span:nth-child(2n){background:var(--blue-b);border-radius:50%}
+#burst span:nth-child(3n){background:#fff;width:5px;height:5px}
+@keyframes boom{0%{opacity:1;transform:translate(-50%,-50%) rotate(0)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) rotate(var(--rot))}}
 </style>
 </head>
 <body>
@@ -376,6 +410,7 @@ sup.ref:hover{text-decoration:underline}
   <div class="hrow">
     <a class="brand" href="https://javiercava.com">javiercava<span>.com</span></a>
     <span class="hb">PIZARRA · FABLE 5</span>
+    <button class="hshare" id="hshare" type="button" aria-label="Compartir esta pizarra">📤</button>
     <div class="lvl" role="group" aria-label="Nivel de detalle">
       <button id="lv0" class="on" type="button" aria-label="Nivel básico">🌱 Básico</button>
       <button id="lv1" type="button" aria-label="Nivel técnico">⚡ +Técnico</button>
@@ -388,7 +423,7 @@ sup.ref:hover{text-decoration:underline}
 
 <!-- PASO 0 · PORTADA -->
 <section class="step on" id="s0">
-  <div class="cover">
+  <div class="cover"><div class="pfield" aria-hidden="true"><i style="left:8%"></i><i style="left:22%;animation-delay:-3s"></i><i style="left:34%;animation-delay:-7s"></i><i style="left:47%;animation-delay:-1.5s"></i><i style="left:58%;animation-delay:-5s"></i><i style="left:69%;animation-delay:-9s"></i><i style="left:81%;animation-delay:-4s"></i><i style="left:92%;animation-delay:-6.5s"></i><i style="left:15%;animation-delay:-8s"></i><i style="left:75%;animation-delay:-2s"></i></div>
     <span class="tag19">⛔ 19 DÍAS FUERA DE SERVICIO</span>
     <h1>El caso <em>Fable&nbsp;5</em></h1>
     <p class="big">El 9 de junio, Anthropic lanzó el modelo de IA más potente de su historia. <b>Tres días después, el Gobierno de EE.&nbsp;UU. lo bloqueó</b> y desapareció para todo el mundo. El 1 de julio volvió.</p>
@@ -838,6 +873,8 @@ sup.ref:hover{text-decoration:underline}
 <!-- PASO 12 · CIERRE -->
 <section class="step" id="s16">
   <div class="eyeb">Paso 16 · Para llevar</div>
+  <div class="done"><span class="dt">// CASO COMPLETADO</span><div class="dn">16 / 16 ✓</div><p>Ya sabes más sobre este episodio que el 99% de LinkedIn. Si te ha servido, pásalo:</p>
+  <button class="share" id="share" type="button">📤 Compartir esta pizarra</button></div>
   <h2>Las 3 ideas con las que quedarte</h2>
   <div class="tk">
     <div>El apagón <b>no</b> lo causó una capacidad peligrosa real: lo causó la <b>ausencia de un estándar</b> para medir la gravedad de un jailbreak. Ese estándar (el «CVSS de la IA») ya se está redactando entre Anthropic, Amazon, Microsoft y Google.</div>
@@ -881,6 +918,8 @@ sup.ref:hover{text-decoration:underline}
   </div>
   <div class="khint">usa ← → para navegar · clic en el centro abre el índice</div>
 </nav>
+<div id="hint" role="status">💡 Desliza ← → o usa los botones</div>
+<div id="burst" aria-hidden="true"></div>
 <div id="sheet" role="dialog" aria-label="Índice"><div class="panel"><h5>// ÍNDICE — toca para saltar <button id="shx" type="button" aria-label="Cerrar">✕</button></h5><div id="shlist"></div></div></div>
 
 <script>
@@ -1167,6 +1206,47 @@ sup.ref:hover{text-decoration:underline}
     be.addEventListener('click',function(){mode='eur';be.classList.add('on');bu.classList.remove('on');paint();});
     paint();
   }
+
+  /* ── hint primera navegación ── */
+  var hint = document.getElementById('hint'), hinted = false;
+  var goCore = go;
+  go = function(n, push){
+    goCore(n, push);
+    if(n===1 && !hinted){ hinted=true; setTimeout(function(){ hint.classList.add('on'); setTimeout(function(){hint.classList.remove('on')},3200); }, 900); }
+    else hint.classList.remove('on');
+    if(n===N-1) fireBurst();
+    
+  };
+
+  /* ── burst final ── */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bursted = false, burstEl = document.getElementById('burst');
+  function fireBurst(){
+    if(bursted || reduce) return; bursted = true;
+    for(var k=0;k<30;k++){
+      var s=document.createElement('span');
+      var ang=Math.random()*6.283, d=90+Math.random()*180;
+      s.style.setProperty('--dx', (Math.cos(ang)*d)+'px');
+      s.style.setProperty('--dy', (Math.sin(ang)*d - 40)+'px');
+      s.style.setProperty('--rot', (Math.random()*540-270)+'deg');
+      s.style.animationDelay=(Math.random()*.15)+'s';
+      burstEl.appendChild(s);
+    }
+    setTimeout(function(){ burstEl.innerHTML=''; }, 1600);
+  }
+
+  /* ── compartir nativo ── */
+  var URLBASE = 'https://cavajavi.github.io/caso-fable-5/';
+  function doShare(){
+    var data = {title:'El caso Fable 5 — pizarra interactiva', text:'19 días apagado por el Gobierno de EE. UU. Te lo explican en 16 pasos, desde cero:', url:URLBASE};
+    if(navigator.share){ navigator.share(data).catch(function(){}); return; }
+    var done = function(){ hint.textContent='✓ Enlace copiado — pégalo donde quieras'; hint.classList.add('on'); setTimeout(function(){hint.classList.remove('on'); hint.textContent='💡 Desliza ← → o usa los botones';},2600); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(URLBASE).then(done, done); } else done();
+  }
+  var sh1=document.getElementById('share'), sh2=document.getElementById('hshare');
+  if(sh1) sh1.addEventListener('click', doShare);
+  if(sh2) sh2.addEventListener('click', doShare);
+
 })();
 </script>
 </body>
