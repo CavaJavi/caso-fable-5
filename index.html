@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>El caso Fable 5 · Pizarra interactiva | javiercava.com</title>
-<meta name="description" content="19 días apagado por orden del Gobierno de EE. UU. La historia completa de Claude Fable 5 explicada en 15 pasos interactivos: jailbreaks, clasificadores, el margen de seguridad y qué significa para ti hoy. Con fuentes oficiales.">
+<meta name="description" content="19 días apagado por orden del Gobierno de EE. UU. La historia completa de Claude Fable 5 explicada en 16 pasos interactivos: jailbreaks, clasificadores, el margen de seguridad y qué significa para ti hoy. Con fuentes oficiales.">
 <meta name="author" content="Javier Cava">
 <meta property="og:title" content="El caso Fable 5: 19 días apagado. Te lo explico en 12 pasos.">
 <meta property="og:description" content="Pizarra interactiva: qué pasó con el modelo más potente de Anthropic, por qué el Gobierno de EE. UU. lo bloqueó y qué significa que haya vuelto. Para cualquier nivel.">
@@ -302,6 +302,64 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .nmid{cursor:pointer;border:0;background:transparent;padding:0}
 .khint{display:none;font-family:var(--mono);font-size:.6rem;color:var(--fnt);text-align:center;margin-top:.35rem}
 @media(min-width:960px){.khint{display:block}}
+
+/* citas */
+sup.ref{color:var(--gold);cursor:pointer;font-family:var(--mono);font-size:.6em;font-weight:700;padding:0 .12em;user-select:none}
+sup.ref:hover{text-decoration:underline}
+#pop{position:fixed;z-index:400;max-width:300px;background:#0f1723;border:1px solid rgba(232,168,37,.55);border-radius:12px;padding:.75rem .85rem;font-size:.8rem;color:#d5dde6;box-shadow:0 18px 50px rgba(0,0,0,.6);display:none}
+#pop.on{display:block;animation:sIn .18s ease}
+#pop .pt{font-family:var(--mono);font-size:.66rem;color:var(--gold);font-weight:700;margin-bottom:.3rem}
+#pop a{color:var(--blue-b);text-decoration:none;font-family:var(--mono);font-size:.72rem;border-bottom:1px dashed rgba(59,158,222,.5)}
+#pop .px{position:absolute;top:.35rem;right:.55rem;color:var(--fnt);cursor:pointer;font-size:.9rem}
+.refitem{scroll-margin-top:90px}
+.refitem.flash{animation:refFlash 1.6s ease}
+@keyframes refFlash{0%,60%{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,168,37,.25)}100%{}}
+.src a b i.rn{font-style:normal;color:var(--gold);margin-right:.4rem}
+/* arquitectura antes/después */
+.arch{margin:1rem 0}
+.layer{display:flex;gap:.8rem;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.85rem .95rem;margin-bottom:.6rem;position:relative;transition:border-color .3s}
+.layer .li{font-size:1.3rem;line-height:1.2;min-width:1.6rem;text-align:center}
+.layer h5{font-family:var(--mono);font-size:.8rem;color:var(--blue-b);margin-bottom:.2rem}
+.layer p{font-size:.85rem;margin:0;color:#c0cbd8}
+.layer .aft{display:none}
+.arch.aft .layer .aft{display:inline}
+.arch.aft .layer .b4{display:none}
+.lb{font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.1em;padding:.2rem .5rem;border-radius:999px;position:absolute;top:.6rem;right:.7rem}
+.lb-same{background:rgba(63,185,80,.12);color:#63d67a;border:1px solid rgba(63,185,80,.4)}
+.lb-new{background:rgba(232,168,37,.14);color:var(--gold);border:1px solid rgba(232,168,37,.5)}
+.arch .lb{display:none}
+.arch.aft .lb{display:inline-block}
+.arch.aft .layer.chg{border-color:rgba(232,168,37,.55);box-shadow:0 0 22px rgba(232,168,37,.12)}
+.arch .ext{display:none}
+.arch.aft .ext{display:flex;animation:sIn .35s ease}
+.ext{border-style:dashed}
+/* leyendas dinámicas sim */
+.crit{font-family:var(--sans);font-size:.8rem;color:#aeb9c8;margin:.35rem 0 0;min-height:1.2em}
+.crit b{color:var(--gold);font-family:var(--mono);font-size:.72rem}
+.presets{display:flex;gap:.5rem;flex-wrap:wrap;margin:.2rem 0 1rem}
+.presets button{font-family:var(--mono);font-size:.68rem;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--mut);padding:.55rem .75rem;border-radius:999px;min-height:40px}
+.presets button.on{border-color:var(--gold);color:var(--gold);background:rgba(232,168,37,.08)}
+.scale{display:flex;height:14px;border-radius:7px;overflow:hidden;margin:.9rem 0 .3rem;border:1px solid var(--line)}
+.scale i{height:100%}
+.scale i:nth-child(1){width:30%;background:rgba(232,168,37,.55)}
+.scale i:nth-child(2){width:25%;background:rgba(217,140,46,.6)}
+.scale i:nth-child(3){width:20%;background:rgba(229,110,90,.6)}
+.scale i:nth-child(4){width:25%;background:rgba(229,83,75,.7)}
+.scalelbl{display:flex;font-family:var(--mono);font-size:.56rem;color:var(--mut);letter-spacing:.04em}
+.scalelbl span:nth-child(1){width:30%}.scalelbl span:nth-child(2){width:25%}.scalelbl span:nth-child(3){width:20%}.scalelbl span:nth-child(4){width:25%}
+/* divisa + personas */
+.curbar{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem;margin:.9rem 0;font-family:var(--mono);font-size:.7rem;color:var(--mut)}
+.curbar .seg2{display:flex;background:#0a0f16;border:1px solid var(--line);border-radius:999px;padding:2px}
+.curbar .seg2 button{font-family:var(--mono);font-size:.7rem;font-weight:700;border:0;background:transparent;color:var(--mut);padding:.4rem .7rem;border-radius:999px;min-height:36px}
+.curbar .seg2 button.on{background:var(--blue);color:#fff}
+.curbar input{width:64px;background:#0a0f16;border:1px solid var(--line);border-radius:8px;color:var(--gold);font-family:var(--mono);font-size:.78rem;padding:.35rem .4rem;text-align:center}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}
+@media(max-width:620px){.duo{grid-template-columns:1fr}}
+.pers{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:1rem}
+.pers h5{font-family:var(--mono);font-size:.8rem;color:var(--gold);margin-bottom:.6rem}
+.pers ol{margin:0 0 0 1.1rem;font-size:.85rem;color:#c0cbd8}
+.pers ol li{margin-bottom:.45rem}
+.pers ol li::marker{color:var(--gold);font-family:var(--mono);font-weight:700}
 </style>
 </head>
 <body>
@@ -325,10 +383,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <span class="tag19">⛔ 19 DÍAS FUERA DE SERVICIO</span>
     <h1>El caso <em>Fable&nbsp;5</em></h1>
     <p class="big">El 9 de junio, Anthropic lanzó el modelo de IA más potente de su historia. <b>Tres días después, el Gobierno de EE.&nbsp;UU. lo bloqueó</b> y desapareció para todo el mundo. El 1 de julio volvió.</p>
-    <p class="big">Esta pizarra te explica <b>qué pasó, por qué y qué significa para ti</b> — en 15 pasos, empezando desde cero — aunque nunca hayas tocado una IA — y con fuentes oficiales y libros de referencia.</p>
+    <p class="big">Esta pizarra te explica <b>qué pasó, por qué y qué significa para ti</b> — en 16 pasos, empezando desde cero — aunque nunca hayas tocado una IA — y con fuentes oficiales y libros de referencia.</p>
     <div class="meta">
       <span>✍️ <b>Javier Cava</b></span>
-      <span>⏱️ ≈ 7 min</span>
+      <span>⏱️ ≈ 8 min</span>
       <span>📚 Fuentes: Anthropic</span>
     </div>
     <button class="cta" id="start" type="button">Empezar la historia <span aria-hidden="true">→</span></button>
@@ -359,7 +417,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <p class="verdict" id="wd-v">—</p>
   </div>
   <p>¿Y de dónde salen esas probabilidades? De su <b>entrenamiento</b>: el modelo "leyó" una parte enorme de internet y de miles de libros. Y aquí está la semilla de todo este caso: <b>en ese texto también hay conocimiento de ciberseguridad</b> — incluida la ofensiva.</p>
-  <div class="def"><b>📖 LLM (Large Language Model):</b> programa entrenado con cantidades masivas de texto para predecir la siguiente palabra. Encadenando predicciones produce respuestas, código o análisis completos.</div>
+  <div class="def"><b>📖 LLM (Large Language Model):</b> programa entrenado con cantidades masivas de texto para predecir la siguiente palabra. Encadenando predicciones produce respuestas, código o análisis completos<sup class="ref" data-r="9">[9]</sup>.</div>
   <div class="book"><span class="bi">📚</span><span><b>Para profundizar:</b> <i>Deep Learning</i> — Goodfellow, Bengio y Courville (MIT Press). El manual de referencia sobre cómo las redes neuronales aprenden a partir de ejemplos. <a href="https://www.deeplearningbook.org" target="_blank" rel="noopener">Texto completo gratis online</a>.</span></div>
   <div class="tech"><b>// detalle técnico</b>Entrenar = ajustar los <b>parámetros</b> (o "pesos") de la red — miles de millones de números — para minimizar el error de predicción sobre el corpus. Todo lo que el modelo "sabe" queda codificado en esos pesos, no en documentos consultables. Recuerda este detalle: es la clave del paso siguiente.</div>
 </section>
@@ -386,7 +444,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   </div>
   <p>Conclusión de ingeniería: si no puedes quitarlo <b>de dentro</b>, pones la seguridad <b>por fuera</b> — puertas (clasificadores), llaves (acceso restringido) y vigilancia. Exactamente el diseño que verás en los próximos pasos… y lo que el Gobierno bloqueó fue el edificio entero mientras revisaba esas puertas.</p>
   <div class="book"><span class="bi">📚</span><span><b>La idea de fondo:</b> en <i>Deep Learning</i> (cap. sobre representaciones distribuidas) se explica por qué cada "concepto" vive repartido entre muchísimos parámetros compartidos — no en una casilla que se pueda vaciar.</span></div>
-  <div class="tech"><b>// detalle técnico</b>Existe un campo de investigación llamado <b>machine unlearning</b> (hacer que un modelo "olvide"), pero hoy no ofrece garantías a escala frontier. Por eso toda la industria protege estos modelos con <b>salvaguardas de despliegue</b>, no con borrados: es también el motivo de que existan dos versiones (Fable con puertas, Mythos con llaves) en lugar de un único modelo "limpio".</div>
+  <div class="tech"><b>// detalle técnico</b>Existe un campo de investigación llamado <b>machine unlearning</b> (hacer que un modelo "olvide"), pero hoy no ofrece garantías a escala frontier<sup class="ref" data-r="9">[9]</sup>. Por eso toda la industria protege estos modelos con <b>salvaguardas de despliegue</b>, no con borrados: es también el motivo de que existan dos versiones (Fable con puertas, Mythos con llaves) en lugar de un único modelo "limpio".</div>
 </section>
 
 <!-- PASO 3 · LOS GEMELOS -->
@@ -414,7 +472,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
       <text x="475" y="238" text-anchor="middle" fill="#ff9089" font-size="13.5" font-weight="700">→ solo ciberdefensa aprobada</text>
     </svg>
   </div>
-  <p>🚗 <b>Analogía:</b> mismo motor, dos coches. Fable 5 es el <b>coche de calle</b>, con todos los airbags y limitador. Mythos 5 es el <b>de competición</b>: solo lo pilotan profesionales autorizados — organizaciones de ciberdefensa del programa <span class="kw">Project Glasswing</span>.</p>
+  <p>🚗 <b>Analogía:</b> mismo motor, dos coches. Fable 5 es el <b>coche de calle</b>, con todos los airbags y limitador. Mythos 5 es el <b>de competición</b>: solo lo pilotan profesionales autorizados — organizaciones de ciberdefensa del programa <span class="kw">Project Glasswing</span><sup class="ref" data-r="2">[2]</sup><sup class="ref" data-r="3">[3]</sup>.</p>
   <div class="tech"><b>// detalle técnico</b>El mes previo al lanzamiento, Anthropic transfirió personal de otros equipos hasta <b>duplicar</b> los investigadores e ingenieros dedicados a las salvaguardas de Fable 5. Mythos 5, sin ellas, encuentra y explota vulnerabilidades software mejor que cualquier otro modelo — y que casi cualquier experto humano. De ahí el acceso ultra restringido.</div>
 </section>
 
@@ -428,7 +486,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="fn"><div class="fc"><b>Prompts «trampa»</b><p>Formulan las peticiones de una manera inusual que los filtros no reconocen como peligrosa.</p></div></div>
     <div class="fn"><div class="fc"><b>Fable 5 responde lo que debía bloquear</b><p>Identifica varias vulnerabilidades de software y, en <b>un</b> caso, genera código demostrando cómo explotar una.</p></div></div>
   </div>
-  <div class="def"><b>📖 JAILBREAK (o bypass):</b> técnica de prompting que esquiva las salvaguardas de un modelo para obtener respuestas que el sistema debería bloquear. Ojo al matiz que veremos luego: <b>no todos los jailbreaks son igual de graves</b>.</div>
+  <div class="def"><b>📖 JAILBREAK (o bypass):</b> técnica de prompting que esquiva las salvaguardas de un modelo para obtener respuestas que el sistema debería bloquear. Ojo al matiz que veremos en el paso 8: <b>no todos los jailbreaks son igual de graves</b><sup class="ref" data-r="1">[1]</sup>.</div>
   <div class="tech"><b>// detalle técnico</b>El informe llegó a conocimiento del Gobierno de EE.&nbsp;UU., y fue ese informe —no un incidente real de ataque— el detonante de todo lo que viene a continuación.</div>
 </section>
 
@@ -443,7 +501,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="ls">Fable 5 + Mythos 5 · todos los usuarios · todo el planeta</div>
   </div>
   <p>¿Por qué para <b>todos</b> y no solo para extranjeros? Porque no existe forma fiable de <b>verificar la nacionalidad en tiempo real</b> de quien escribe un prompt. Ante una orden inmediata, la única salida operativa fue apagarlo entero.</p>
-  <div class="def"><b>📖 EXPORT CONTROLS:</b> restricciones legales con las que un gobierno limita quién puede acceder a una tecnología que considera sensible (chips, armamento… y ahora, modelos de IA).</div>
+  <div class="def"><b>📖 EXPORT CONTROLS:</b> restricciones legales con las que un gobierno limita quién puede acceder a una tecnología que considera sensible (chips, armamento… y ahora, modelos de IA)<sup class="ref" data-r="1">[1]</sup>.</div>
 </section>
 
 <!-- PASO 4 · CLASIFICADORES -->
@@ -458,7 +516,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   </div>
   <div class="split">
     <div class="out ok"><b>✅ Claramente segura</b><p>Fable 5 responde con normalidad. Es lo que pasa con la inmensa mayoría de peticiones.</p></div>
-    <div class="out ko"><b>🚫 Bloqueada</b><p>Se te avisa… y no te quedas colgado: tu petición se <b>reenvía automáticamente a Opus&nbsp;4.8</b>, que la responde.</p></div>
+    <div class="out ko"><b>🚫 Bloqueada</b><p>Se te avisa… y no te quedas colgado: tu petición se <b>reenvía automáticamente a Opus&nbsp;4.8</b>, que la responde<sup class="ref" data-r="1">[1]</sup>.</p></div>
   </div>
   <div class="book"><span class="bi">📚</span><span><b>De dónde viene la idea:</b> el modelo del <i>queso suizo</i> de James Reason (<i>Human Error</i>, 1990) — varias capas imperfectas cuyos agujeros no se alinean — y la <i>defensa en profundidad</i> de la ingeniería de seguridad clásica (Ross Anderson, <i>Security Engineering</i>, 3.ª ed. — <a href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener">capítulos gratis online</a>).</span></div>
   <div class="tech"><b>// detalle técnico</b>Es una estrategia de <b>defensa en profundidad</b>: ninguna capa es perfecta por sí sola, así que se apilan varias — entrenamiento del modelo para rechazar + clasificadores de entrada y salida + análisis retroactivo de patrones de mal uso. Romper una capa no basta.</div>
@@ -499,7 +557,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <p id="a-p">Se bloquea lo dañino, lo ambiguo… y una pequeña franja de peticiones probablemente benignas. Ese colchón amarillo es el margen: garantiza que nada peligroso se cuele por los bordes.</p>
     <span class="chip c-g" id="a-v">COMPROMISO EQUILIBRADO</span>
   </div>
-  <div class="tech"><b>// detalle técnico</b>El margen también <b>neutraliza jailbreaks por diseño</b>: muchos son estrechos, y aunque perforen un poco el clasificador, aterrizan en territorio benigno. Anthropic asumió los falsos positivos conscientemente para poder poner un modelo así a disposición de todo el mundo.</div>
+  <div class="tech"><b>// detalle técnico</b>El margen también <b>neutraliza jailbreaks por diseño</b>: muchos son estrechos, y aunque perforen un poco el clasificador, aterrizan en territorio benigno. Anthropic asumió los falsos positivos conscientemente para poder poner un modelo así a disposición de todo el mundo<sup class="ref" data-r="1">[1]</sup>.</div>
 </section>
 
 <!-- PASO 6 · TIPOS DE JAILBREAK -->
@@ -541,7 +599,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <p id="b-p">La brecha se abre… pero cae dentro del margen: un comportamiento probablemente benigno (aquí, trabajo rutinario de ciberdefensa) que estaba bloqueado por pura precaución. Molesto, sí. Peligroso, no.</p>
     <span class="chip c-a" id="b-v">SEVERIDAD BAJA · SIN ACCESO A NADA DAÑINO</span>
   </div>
-  <div class="tech"><b>// detalle técnico</b>Los jailbreaks <b>dañinos estrechos</b> suelen ser de severidad baja–moderada: la propia estrechez limita al atacante. El escenario realmente crítico es el <b>universal</b> — y a fecha del post oficial, <b>no se ha descubierto ninguno para Fable 5</b>, con red teams expertos intentándolo activamente.</div>
+  <div class="tech"><b>// detalle técnico</b>Los jailbreaks <b>dañinos estrechos</b> suelen ser de severidad baja–moderada: la propia estrechez limita al atacante. El escenario realmente crítico es el <b>universal</b> — y a fecha del post oficial, <b>no se ha descubierto ninguno para Fable 5</b>, con red teams expertos intentándolo activamente<sup class="ref" data-r="1">[1]</sup>.</div>
 </section>
 
 <!-- PASO 7 · VEREDICTO -->
@@ -559,7 +617,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
       <li>Kimi K2.7 (Moonshot) <i>✓ sí</i></li>
     </ul>
   </div>
-  <p><b>Todos los modelos probados</b> —también los de la competencia— reproducían la misma demostración. Y la técnica no desbloqueó ninguna capacidad exclusiva de nivel Mythos: aterrizó en el <b>margen de seguridad</b> (ciberdefensa rutinaria bloqueada por precaución).</p>
+  <p><b>Todos los modelos probados</b> —también los de la competencia— reproducían la misma demostración. Y la técnica no desbloqueó ninguna capacidad exclusiva de nivel Mythos: aterrizó en el <b>margen de seguridad</b> (ciberdefensa rutinaria bloqueada por precaución)<sup class="ref" data-r="1">[1]</sup>.</p>
   <div class="chips"><span class="chip c-a">VEREDICTO: JAILBREAK MENOR</span><span class="chip c-g">SIN CAPACIDAD ÚNICA EXPUESTA</span></div>
   <div class="tech"><b>// detalle técnico</b>Además de la demo de exploit, muchos modelos menos capaces (Opus 4.8, GPT‑5.5, Kimi K2.7) identificaban las <b>mismas vulnerabilidades</b> del informe. Es la métrica de «ganancia de capacidad» que verás en el paso 9: si otras herramientas ya llegan ahí, la severidad real es baja.</div>
 </section>
@@ -573,15 +631,45 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="n">&gt;99%</div>
     <div class="c">de bloqueo de la técnica del informe de Amazon</div>
   </div>
-  <p>Si una petición tuya cae en el bloqueo, <b>se te notifica y se reenvía a Opus 4.8</b>. Y una validación externa importante: <b>CAISI</b> (el centro de estándares de IA del Dpto. de Comercio de EE.&nbsp;UU.) probó las salvaguardas antiguas y las nuevas de forma independiente: <b>extraordinariamente sólidas</b>.</p>
+  <p>Si una petición tuya cae en el bloqueo, <b>se te notifica y se reenvía a Opus 4.8</b>. Y una validación externa importante: <b>CAISI</b> (el centro de estándares de IA del Dpto. de Comercio de EE.&nbsp;UU.) probó las salvaguardas antiguas y las nuevas de forma independiente: <b>extraordinariamente sólidas</b><sup class="ref" data-r="1">[1]</sup>.</p>
   <div class="chips"><span class="chip c-g">✓ TÉCNICA BLOQUEADA &gt;99%</span><span class="chip c-a">⚠️ MÁS FALSOS POSITIVOS EN CODING</span></div>
   <p>El precio a pagar: el nuevo clasificador salta más a menudo con peticiones inocentes de programación y debugging. Anthropic dice que lo irá afinando.</p>
   <div class="tech"><b>// detalle técnico</b>En la mínima fracción de casos que aún pasa, la información resultante no es lo bastante detallada como para ayudar a un atacante. Y recuerda la defensa en profundidad: aunque un jailbreak tenga éxito, las demás capas (rechazo entrenado + análisis retroactivo de patrones) siguen mitigando.</div>
 </section>
 
 <!-- PASO 9 · FRAMEWORK -->
+
+<!-- PASO 11 · QUÉ CAMBIÓ -->
 <section class="step" id="s11">
-  <div class="eyeb">Paso 11 · La lección de fondo</div>
+  <div class="eyeb">Paso 11 · Bajo el capó 🔧</div>
+  <h2>Qué cambió por dentro (y por qué se desbloqueó)</h2>
+  <p>La pregunta clave: si el jailbreak era «menor»… <b>¿qué tuvo que cambiar para que el Gobierno levantara los controles?</b> Respuesta corta: <b>el modelo, nada; el perímetro, todo lo que verás en dorado</b>. Alterna las dos fechas:</p>
+  <div class="scbtns">
+    <button class="scb on" data-a="b4" type="button">🔵 9 JUN · como se lanzó</button>
+    <button class="scb" data-a="aft" type="button">🟡 1 JUL · como volvió</button>
+  </div>
+  <div class="arch" id="arch">
+    <div class="layer"><span class="li">🧠</span><span><h5>Capa 0 · El modelo base</h5><p><span class="b4">Fable 5, clase Mythos: los pesos entrenados.</span><span class="aft"><b>Idéntico.</b> Ni un parámetro retocado — recuerda el paso 2: no hay cirugía posible sobre los pesos.</span></p></span><span class="lb lb-same">SIN CAMBIOS</span></div>
+    <div class="layer chg"><span class="li">🛡️</span><span><h5>Capa 1 · Clasificadores en tiempo real</h5><p><span class="b4">Versión 1: el margen de seguridad más amplio de la historia de Anthropic.</span><span class="aft"><b>Versión 2, reentrenada junto al Gobierno:</b> bloquea la técnica del informe de Amazon en &gt;99% de los intentos<sup class="ref" data-r="1">[1]</sup>, validada de forma independiente por CAISI. Coste asumido: más falsos positivos en coding.</span></p></span><span class="lb lb-new">★ REENTRENADA</span></div>
+    <div class="layer chg"><span class="li">🔀</span><span><h5>Capa 2 · Ruta de bloqueo</h5><p><span class="b4">Petición marcada → se bloquea.</span><span class="aft">Petición marcada → <b>aviso al usuario + reenvío automático a Opus 4.8</b> (y facturado a precio de Opus): no te quedas sin respuesta.</span></p></span><span class="lb lb-new">MEJORADA</span></div>
+    <div class="layer"><span class="li">👁️</span><span><h5>Capa 3 · Análisis retroactivo</h5><p><span class="b4">Detección de patrones de mal uso tras la conversación.</span><span class="aft">Igual: sigue siendo la red de seguridad final de la defensa en profundidad.</span></p></span><span class="lb lb-same">SIN CAMBIOS</span></div>
+    <div class="layer ext"><span class="li">📏</span><span><h5>Fuera del producto · Framework de severidad</h5><p>Borrador de estándar común de jailbreaks con Amazon, Microsoft y Google (paso siguiente)<sup class="ref" data-r="1">[1]</sup>.</p></span><span class="lb lb-new">NUEVO</span></div>
+    <div class="layer ext"><span class="li">🕐</span><span><h5>Fuera del producto · Vigilancia 24/7</h5><p>Equipo permanente monitorizando los canales de reporte de jailbreaks<sup class="ref" data-r="1">[1]</sup>.</p></span><span class="lb lb-new">NUEVO</span></div>
+    <div class="layer ext"><span class="li">🐛</span><span><h5>Fuera del producto · Canal HackerOne</h5><p>Programa público para que investigadores envíen posibles cyber-jailbreaks de Fable 5<sup class="ref" data-r="7">[7]</sup>.</p></span><span class="lb lb-new">NUEVO</span></div>
+    <div class="layer ext"><span class="li">🏛️</span><span><h5>Fuera del producto · Evaluación gubernamental</h5><p>Acceso pre-lanzamiento ampliado y testeo independiente de salvaguardas, bajo la Orden Ejecutiva del 2 de junio<sup class="ref" data-r="4">[4]</sup>.</p></span><span class="lb lb-new">NUEVO</span></div>
+  </div>
+  <p style="margin-top:1.2rem"><b>Y esta es la secuencia lógica exacta del desbloqueo:</b></p>
+  <div class="flow">
+    <div class="fn"><div class="fc"><b>La revisión desmonta la alarma</b><p>Conjunta con Gobierno y Amazon: jailbreak menor, sin capacidad única expuesta — todos los modelos probados hacían lo mismo<sup class="ref" data-r="1">[1]</sup>.</p></div></div>
+    <div class="fn"><div class="fc"><b>Se despliega y valida la capa nueva</b><p>Clasificador v2 en producción; CAISI (Dpto. de Comercio) confirma que las salvaguardas —viejas y nuevas— son extraordinariamente sólidas<sup class="ref" data-r="1">[1]</sup>.</p></div></div>
+    <div class="fn"><div class="fc"><b>Se firma el marco de colaboración</b><p>Evaluación pre-lanzamiento, información rápida, investigación conjunta y estándar de industria<sup class="ref" data-r="1">[1]</sup><sup class="ref" data-r="4">[4]</sup>.</p></div></div>
+    <div class="fn"><div class="fc"><b>El Gobierno retira los controles</b><p>30 de junio. El 1 de julio, redespliegue global<sup class="ref" data-r="1">[1]</sup>.</p></div></div>
+  </div>
+  <div class="def"><b>💡 IDEA PARA LLEVAR:</b> en IA de frontera, la seguridad <b>es la arquitectura de despliegue</b>. Mismas «neuronas» + distinto perímetro = distinto riesgo. Por eso el desbloqueo no necesitó tocar el modelo: necesitó demostrar el perímetro.</div>
+</section>
+
+<section class="step" id="s12">
+  <div class="eyeb">Paso 12 · La lección de fondo</div>
   <h2>Un «CVSS» para jailbreaks</h2>
   <p>La verdadera moraleja: una técnica <b>menor</b> provocó un apagón mundial porque <b>la industria no tiene una escala común</b> para medir la gravedad de un jailbreak. En software clásico eso existe desde hace años (se llama CVSS); en IA, no.</p>
   <p>Por eso Anthropic, <b>Amazon, Microsoft y Google</b> están redactando ese estándar. Cada jailbreak se puntuaría en 4 criterios:</p>
@@ -591,25 +679,34 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="fwc"><span class="n">03</span><h4>Weaponización</h4><p>¿Cuánto esfuerzo humano requiere convertirlo en un ataque real? ¿Funciona a la primera?</p></div>
     <div class="fwc"><span class="n">04</span><h4>Descubribilidad</h4><p>¿Hace falta conocimiento experto para dar con la técnica, o ya circula por internet?</p></div>
   </div>
+  <div class="def"><b>📖 CVSS (Common Vulnerability Scoring System):</b> el estándar con el que la industria del software puntúa la gravedad de una vulnerabilidad de 0 a 10 desde 2005; lo mantiene el consorcio FIRST.org<sup class="ref" data-r="8">[8]</sup>. El framework para IA aspira a ser su equivalente.</div>
   <div class="sim">
     <h4>🧪 Pruébalo tú: puntúa un jailbreak (0–10)</h4>
-    <div class="sr"><div class="st"><label for="r1">Ganancia de capacidad</label><output id="v1">2</output></div><input type="range" id="r1" min="0" max="10" value="2" aria-label="Ganancia de capacidad"></div>
-    <div class="sr"><div class="st"><label for="r2">Amplitud</label><output id="v2">1</output></div><input type="range" id="r2" min="0" max="10" value="1" aria-label="Amplitud"></div>
-    <div class="sr"><div class="st"><label for="r3">Weaponización</label><output id="v3">3</output></div><input type="range" id="r3" min="0" max="10" value="3" aria-label="Facilidad de weaponización"></div>
-    <div class="sr"><div class="st"><label for="r4">Descubribilidad</label><output id="v4">2</output></div><input type="range" id="r4" min="0" max="10" value="2" aria-label="Descubribilidad"></div>
+    <p style="font-size:.85rem;color:#aeb9c8;margin:-.3rem 0 .8rem">Mueve cada regulador y <b>lee debajo qué significa tu valor</b>, o carga un caso preparado:</p>
+    <div class="presets">
+      <button type="button" class="on" data-ps="2,1,3,2">🟡 Caso Amazon</button>
+      <button type="button" data-ps="5,3,5,4">🟠 Estrecho típico</button>
+      <button type="button" data-ps="9,9,8,8">🔴 Peor escenario</button>
+    </div>
+    <div class="sr"><div class="st"><label for="r1">Ganancia de capacidad</label><output id="v1">2</output></div><input type="range" id="r1" min="0" max="10" value="2" aria-label="Ganancia de capacidad"><div class="crit" id="e1">—</div></div>
+    <div class="sr"><div class="st"><label for="r2">Amplitud</label><output id="v2">1</output></div><input type="range" id="r2" min="0" max="10" value="1" aria-label="Amplitud"><div class="crit" id="e2">—</div></div>
+    <div class="sr"><div class="st"><label for="r3">Weaponización</label><output id="v3">3</output></div><input type="range" id="r3" min="0" max="10" value="3" aria-label="Facilidad de weaponización"><div class="crit" id="e3">—</div></div>
+    <div class="sr"><div class="st"><label for="r4">Descubribilidad</label><output id="v4">2</output></div><input type="range" id="r4" min="0" max="10" value="2" aria-label="Descubribilidad"><div class="crit" id="e4">—</div></div>
     <div class="gauge">
       <div class="gs" id="gsc">2.0</div>
       <div class="gl"><b id="gtt">Severidad: MENOR</b><span id="gdd">El perfil del caso Amazon: técnica estrecha y sin ganancia real frente a otras herramientas. Se resuelve actualizando el clasificador.</span></div>
     </div>
-    <div class="note">* Simulación didáctica para interiorizar los criterios — el método de puntuación oficial aún no se ha publicado. Los valores iniciales aproximan el caso Amazon.</div>
+    <div class="scale" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="scalelbl"><span>0–3 MENOR</span><span>3–5,5 MODERADA</span><span>5,5–7,5 ALTA</span><span>7,5–10 CRÍTICA</span></div>
+    <div class="note">* Método didáctico: <b>media simple</b> de los 4 criterios, con umbrales propios para ilustrar. Anthropic aún no ha publicado la fórmula oficial<sup class="ref" data-r="1">[1]</sup> — los criterios sí son los del borrador del framework.</div>
   </div>
   <div class="book"><span class="bi">📐</span><span><b>El espejo del software clásico:</b> la especificación oficial del CVSS la mantiene FIRST.org — <a href="https://www.first.org/cvss/" target="_blank" rel="noopener">first.org/cvss</a>. Es exactamente el tipo de estándar común que la IA aún no tiene.</span></div>
-  <div class="tech"><b>// detalle técnico</b>El framework calibraría la respuesta según severidad: para la clase más grave (p.&nbsp;ej., explotación activa contra redes eléctricas o banca) → mitigaciones preliminares inmediatas. Se suman un equipo de <b>monitorización 24/7</b> de canales de reporte y un programa en <b>HackerOne</b> para que investigadores envíen posibles cyber‑jailbreaks de Fable 5.</div>
+  <div class="tech"><b>// detalle técnico</b>El framework calibraría la respuesta según severidad: para la clase más grave (p.&nbsp;ej., explotación activa contra redes eléctricas o banca) → mitigaciones preliminares inmediatas. Se suman un equipo de <b>monitorización 24/7</b> de canales de reporte y un programa en <b>HackerOne</b> para que investigadores envíen posibles cyber‑jailbreaks de Fable 5<sup class="ref" data-r="7">[7]</sup>.</div>
 </section>
 
 <!-- PASO 10 · EL REGRESO -->
-<section class="step" id="s12">
-  <div class="eyeb">Paso 12 · Desenlace</div>
+<section class="step" id="s13">
+  <div class="eyeb">Paso 13 · Desenlace</div>
   <h2>El regreso, fecha a fecha</h2>
   <div class="tl">
     <div class="tli"><span class="d">09 JUN</span><p>Lanzamiento de Fable 5 (público) y Mythos 5 (solo ciberdefensa aprobada).</p></div>
@@ -619,20 +716,26 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="tli g"><span class="d">01 JUL</span><p><b>Fable 5 vuelve para todos:</b> Claude.ai, Claude Platform, Claude Code y Claude Cowork. En AWS, Google Cloud y Microsoft Foundry, en cuanto sea posible.</p></div>
     <div class="tli a"><span class="d">07 JUL</span><p>Último día de la ventana «incluido en tu plan». Después → <b>créditos de uso</b>.</p></div>
   </div>
-  <div class="tech"><b>// detalle técnico</b>La ampliación de Mythos 5 al resto de socios nacionales e internacionales del programa Glasswing sigue coordinándose con el Gobierno. Todo el episodio se apoya además en la Orden Ejecutiva del 2 de junio (<i>Promoting Advanced AI Innovation and Security</i>) y deriva en 4 compromisos de colaboración: evaluación pre‑lanzamiento con acceso anticipado, información rápida sobre salvaguardas, recursos dedicados a investigación conjunta y un estándar común de industria.</div>
+  <div class="tech"><b>// detalle técnico</b>La ampliación de Mythos 5 al resto de socios nacionales e internacionales del programa Glasswing sigue coordinándose con el Gobierno. Todo el episodio se apoya además en la Orden Ejecutiva del 2 de junio (<i>Promoting Advanced AI Innovation and Security</i>) y deriva en 4 compromisos de colaboración: evaluación pre‑lanzamiento con acceso anticipado, información rápida sobre salvaguardas, recursos dedicados a investigación conjunta y un estándar común de industria<sup class="ref" data-r="1">[1]</sup><sup class="ref" data-r="4">[4]</sup>.</div>
 </section>
 
 
 <!-- PASO 13 · COSTE -->
-<section class="step" id="s13">
-  <div class="eyeb">Paso 13 · La factura 💶</div>
+<section class="step" id="s14">
+  <div class="eyeb">Paso 14 · La factura 💶</div>
   <h2>¿Cuánto cuesta Fable 5?</h2>
   <p>La otra mitad de «qué significa para ti». Hay dos formas de pagarlo — como <b>usuario normal</b> (suscripción) o como <b>empresa/developer</b> (API) — y las dos tienen letra pequeña.</p>
 
-  <h3 style="font-family:var(--mono);font-size:1rem;color:var(--blue-b);margin:1.2rem 0 .5rem">🏢 Vía API (developers y empresas)</h3>
+  <div class="curbar">
+    <span>Ver precios en</span>
+    <div class="seg2"><button id="cu-usd" class="on" type="button">US$ oficial</button><button id="cu-eur" type="button">€ aprox.</button></div>
+    <span>· 1 $ =</span><input id="fx" type="number" step="0.01" min="0.5" max="1.5" value="0.92" aria-label="Tipo de cambio euro por dólar"><span>€ (cambio orientativo — Anthropic factura en US$; impuestos como el IVA español, aparte)</span>
+  </div>
+  <div class="def"><b>📖 TOKEN:</b> la unidad con la que se mide (y cobra) el texto. Regla práctica: 1 token ≈ 4 caracteres ≈ ¾ de palabra; 1 millón de tokens ≈ 750.000 palabras<sup class="ref" data-r="5">[5]</sup>. Para situarte: <b>toda esta pizarra ronda los 15.000 tokens → 0,15&nbsp;$ como entrada</b>.</div>
+  <h3 style="font-family:var(--mono);font-size:1rem;color:var(--blue-b);margin:1.2rem 0 .5rem">🏢 Vía API (developers y empresas)<sup class="ref" data-r="5">[5]</sup></h3>
   <div class="price">
-    <div class="pcard"><div class="pl">ENTRADA</div><div class="pn">10&nbsp;$</div><div class="ps">por millón de tokens</div></div>
-    <div class="pcard"><div class="pl">SALIDA</div><div class="pn">50&nbsp;$</div><div class="ps">por millón de tokens</div></div>
+    <div class="pcard"><div class="pl">ENTRADA</div><div class="pn" id="pn-in">10&nbsp;$</div><div class="ps" id="pa-in">≈ 9,20&nbsp;€ · por millón de tokens</div></div>
+    <div class="pcard"><div class="pl">SALIDA</div><div class="pn" id="pn-out">50&nbsp;$</div><div class="ps" id="pa-out">≈ 46,00&nbsp;€ · por millón de tokens</div></div>
   </div>
   <div class="ptbl">
     <div class="hd"><span>MODELO</span><span>ENTRADA / SALIDA ($/Mtok)</span></div>
@@ -650,7 +753,21 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="gauge"><div class="gs" id="cg">45&nbsp;$</div><div class="gl"><b>Coste estimado del trabajo</b><span>Referencia: 1M tokens ≈ 750.000 palabras (1 token ≈ 4 caracteres). La salida a 50&nbsp;$/M es la que domina la factura.</span></div></div>
   </div>
 
-  <h3 style="font-family:var(--mono);font-size:1rem;color:var(--blue-b);margin:1.4rem 0 .5rem">🙋 Vía suscripción (usuario normal)</h3>
+  <div class="duo">
+    <div class="pers"><h5>👤 María — usuaria particular en Madrid (plan Pro)</h5><ol>
+      <li>Paga su suscripción Pro (≈20&nbsp;$/mes + IVA); su plan le da un <b>depósito de uso semanal</b>.</li>
+      <li>Hasta el <b>7 de julio</b> puede usar Fable 5 contra ese depósito, con tope del <b>50%</b> — el resto queda para Opus/Sonnet/Haiku.</li>
+      <li>Nota que Fable «gasta» ≈2× más rápido por interacción que Opus 4.8<sup class="ref" data-r="6">[6]</sup>.</li>
+      <li>Desde el <b>8 de julio</b>: si quiere seguir con Fable, activa <b>créditos de uso</b> en la versión web (prepago a tarifa API). Si no, sigue con los demás modelos sin cambio alguno.</li>
+    </ol></div>
+    <div class="pers"><h5>🏢 Consultora española — 5 developers</h5><ol>
+      <li>Dos vías: <b>API</b> (pago por token, 10/50&nbsp;$ por millón) o asientos <b>Team/Enterprise</b> + créditos.</li>
+      <li>Orden de magnitud con estimaciones publicadas: un dev con ~2&nbsp;h/día de trabajo agéntico ≈ 100–300&nbsp;$/mes en créditos → <b>el equipo, ≈500–1.500&nbsp;$/mes</b> además de los asientos.</li>
+      <li>Palancas de ahorro reales: modelo barato por defecto (Sonnet) y escalar a Fable solo lo difícil; caché de prompts (≈−90% entrada); batch (−50%)<sup class="ref" data-r="5">[5]</sup>.</li>
+      <li>⚠️ Compliance/RGPD: Fable 5 exige <b>retención de datos de 30 días</b> para operar sus clasificadores<sup class="ref" data-r="13">[13]</sup>; el resto de modelos mantiene Zero Data Retention.</li>
+    </ol></div>
+  </div>
+  <h3 style="font-family:var(--mono);font-size:1rem;color:var(--blue-b);margin:1.4rem 0 .5rem">🙋 Vía suscripción (usuario normal)<sup class="ref" data-r="6">[6]</sup></h3>
   <div class="ptbl">
     <div class="hd"><span>PLAN</span><span>¿FABLE 5?</span></div>
     <div><span>Free</span><span>✗ no incluido</span></div>
@@ -671,13 +788,14 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="fn"><div class="fc"><b>Y bebe rápido: ≈ 2× más que Opus</b><p>Cada interacción con Fable 5 gasta el doble de "uso" que una equivalente con Opus 4.8 — es literalmente el aviso de tu app.</p></div></div>
     <div class="fn"><div class="fc"><b>Desde el 8 de julio: créditos de uso</b><p>Fable sale del depósito y pasa a <span class="kw">créditos prepagados</span> a tarifa API (10/50&nbsp;$ por Mtok). Sin créditos activados → sin Fable 5, aunque pagues Pro o Max.</p></div></div>
   </div>
+  <div class="chips"><span class="chip c-g">✓ TU CUOTA DE OPUS · SONNET · HAIKU NO SE TOCA</span></div>
   <div class="def"><b>📖 CRÉDITOS DE USO:</b> saldo de prepago que activas en tu cuenta (solo desde la versión web si compraste la suscripción por App Store/Google Play) y del que se descuenta cada petición a tarifa API. Según la documentación, con techo de gasto diario configurable (máx. 2.000&nbsp;$/día).</div>
   <div class="tech"><b>// letra pequeña para empresas</b>Tres cosas que un FinOps debe saber: (1) Fable 5 exige <b>retención de datos de 30 días</b> para operar sus clasificadores — relevante para GDPR/compliance; Opus 4.8 mantiene Zero Data Retention. (2) La inferencia con enrutado solo-EE.UU. lleva recargo (~×1,1). (3) Estimaciones publicadas de coste real: un developer con ~2h/día de trabajo agéntico ≈ 100–300&nbsp;$/mes en créditos además de su asiento — presupuesta antes de desplegar en equipo.</div>
 </section>
 
 <!-- PASO 14 · TU APP HOY -->
-<section class="step" id="s14">
-  <div class="eyeb">Paso 14 · En tu pantalla 📱</div>
+<section class="step" id="s15">
+  <div class="eyeb">Paso 15 · En tu pantalla 📱</div>
   <h2>Qué significa lo que ves hoy en la app</h2>
   <p>Si abres Claude estos días verás este aviso. Vamos a decodificarlo, línea a línea:</p>
   <div class="shot">
@@ -686,7 +804,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="cos">
       <div class="co"><i>1</i><span><b>«Incluido… hasta el 7 de jul.»</b> → ventana de cortesía del regreso: del 1 al 7 de julio, Fable 5 va incluido en los planes de pago sin coste extra.</span></div>
       <div class="co"><i>2</i><span><b>«Hasta el 50&nbsp;% de tus límites semanales»</b> → no es barra libre: Fable 5 puede consumir como máximo la mitad de tu cuota semanal. El resto queda a salvo para los demás modelos.</span></div>
-      <div class="co"><i>3</i><span><b>«Después, funciona con créditos de uso»</b> → desde el 8 de julio, Fable 5 sale de la cuota del plan y se paga con <span class="kw">créditos de uso</span> (saldo que activas en tu cuenta). Sin créditos habilitados → sin Fable 5.</span></div>
+      <div class="co"><i>3</i><span><b>«Después, funciona con créditos de uso»</b> → desde el 8 de julio, Fable 5 sale de la cuota del plan y se paga con <span class="kw">créditos de uso</span> (saldo que activas en tu cuenta)<sup class="ref" data-r="6">[6]</sup>. Sin créditos habilitados → sin Fable 5.</span></div>
       <div class="co"><i>4</i><span><b>«Consume el uso mucho más rápido que Opus 4.8»</b> → cada interacción gasta bastante más cuota. Traducción práctica: <b>resérvalo para los problemas de verdad difíciles</b> y usa Sonnet/Haiku para el día a día.</span></div>
     </div>
   </div>
@@ -709,28 +827,30 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 12 · CIERRE -->
-<section class="step" id="s15">
-  <div class="eyeb">Paso 15 · Para llevar</div>
+<section class="step" id="s16">
+  <div class="eyeb">Paso 16 · Para llevar</div>
   <h2>Las 3 ideas con las que quedarte</h2>
   <div class="tk">
     <div>El apagón <b>no</b> lo causó una capacidad peligrosa real: lo causó la <b>ausencia de un estándar</b> para medir la gravedad de un jailbreak. Ese estándar (el «CVSS de la IA») ya se está redactando entre Anthropic, Amazon, Microsoft y Google.</div>
     <div>El <b>margen de seguridad</b> funcionó como se diseñó: el jailbreak perforó el clasificador… y aterrizó en zona inofensiva. Los falsos positivos que a veces sufres son el precio de ese colchón.</div>
     <div>En lo práctico: Fable 5 está <b>incluido hasta el 7 de julio</b> (máx. 50&nbsp;% de tu cuota semanal); desde el 8, <b>créditos de uso</b>. Y consume mucho más rápido que Opus 4.8 — resérvalo para lo difícil.</div>
   </div>
-  <h2 style="margin-top:1.6rem">📚 Biblioteca para ir más lejos</h2>
-  <div class="book"><span class="bi">🧠</span><span><b><i>Deep Learning</i></b> — Goodfellow, Bengio, Courville (MIT Press). Cómo aprenden las redes neuronales y por qué el conocimiento vive en los pesos. <a href="https://www.deeplearningbook.org" target="_blank" rel="noopener">Gratis online</a>.</span></div>
-  <div class="book"><span class="bi">🛡️</span><span><b><i>Security Engineering</i> (3.ª ed.)</b> — Ross Anderson. La biblia de la defensa en profundidad y el diseño de sistemas seguros. <a href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener">Capítulos gratis online</a>.</span></div>
-  <div class="book"><span class="bi">🧀</span><span><b><i>Human Error</i></b> — James Reason (1990). El origen del modelo del "queso suizo": capas imperfectas cuyos agujeros no deben alinearse.</span></div>
-  <div class="book"><span class="bi">🤖</span><span><b><i>Human Compatible</i></b> — Stuart Russell. Por qué controlar sistemas de IA muy capaces es un problema de diseño, no un parche de última hora.</span></div>
-  <h2 style="margin-top:1.6rem">Fuentes oficiales</h2>
+  <h2 style="margin-top:1.6rem">📚 Referencias — todo lo afirmado, trazable</h2>
+  <p style="font-size:.9rem">Cada <sup class="ref" data-r="1">[n]</sup> dorado del texto apunta aquí (tócalo donde lo veas: se abre la fuente). Documentación oficial primero; libros y estándares después.</p>
   <div class="src">
-    <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener"><b>Redeploying Claude Fable 5</b> — el post oficial del caso (30 jun)<span>anthropic.com/news/redeploying-fable-5</span></a>
-    <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener"><b>Introducing Fable 5 &amp; Mythos 5</b> — anuncio de lanzamiento (9 jun)<span>anthropic.com/news/claude-fable-5-mythos-5</span></a>
-    <a href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank" rel="noopener"><b>Project Glasswing</b> — el programa de socios de ciberdefensa<span>anthropic.com/news/expanding-project-glasswing</span></a>
-    <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank" rel="noopener"><b>Executive Order (2 jun 2026)</b> — Promoting Advanced AI Innovation and Security<span>whitehouse.gov/presidential-actions/…</span></a>
-    <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener"><b>Precios oficiales de la API</b> — tarifas por modelo, batch y caché<span>platform.claude.com/docs</span></a>
-    <a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener"><b>Créditos de uso</b> — cómo funcionan a partir del 8 de julio<span>support.claude.com</span></a>
-    <a href="https://hackerone.com/anthropic-cyber-jailbreak/" target="_blank" rel="noopener"><b>Programa HackerOne</b> — reporte de cyber‑jailbreaks de Fable 5<span>hackerone.com/anthropic-cyber-jailbreak</span></a>
+    <a class="refitem" id="ref-1" href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener"><b><i class="rn">[1]</i>Anthropic — Redeploying Claude Fable 5</b> El post oficial del caso: bloqueo, revisión, clasificador v2, framework y regreso (30 jun 2026)<span>anthropic.com/news/redeploying-fable-5</span></a>
+    <a class="refitem" id="ref-2" href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener"><b><i class="rn">[2]</i>Anthropic — Introducing Fable 5 &amp; Mythos 5</b> Anuncio de lanzamiento de los dos despliegues (9 jun 2026)<span>anthropic.com/news/claude-fable-5-mythos-5</span></a>
+    <a class="refitem" id="ref-3" href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank" rel="noopener"><b><i class="rn">[3]</i>Anthropic — Project Glasswing</b> El programa de socios de ciberdefensa con acceso a Mythos<span>anthropic.com/news/expanding-project-glasswing</span></a>
+    <a class="refitem" id="ref-4" href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank" rel="noopener"><b><i class="rn">[4]</i>Casa Blanca — Executive Order (2 jun 2026)</b> Promoting Advanced AI Innovation and Security<span>whitehouse.gov/presidential-actions/…</span></a>
+    <a class="refitem" id="ref-5" href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener"><b><i class="rn">[5]</i>Anthropic — Precios oficiales de la API</b> Tarifas por modelo, contexto 1M, batch −50%, caché ≈−90%<span>platform.claude.com/docs/en/about-claude/pricing</span></a>
+    <a class="refitem" id="ref-6" href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener"><b><i class="rn">[6]</i>Anthropic — Créditos de uso en planes de pago</b> Cómo se activan y facturan; límites de uso de Fable 5<span>support.claude.com</span></a>
+    <a class="refitem" id="ref-7" href="https://hackerone.com/anthropic-cyber-jailbreak/" target="_blank" rel="noopener"><b><i class="rn">[7]</i>HackerOne — Anthropic Cyber Jailbreak</b> Canal público para reportar posibles cyber‑jailbreaks<span>hackerone.com/anthropic-cyber-jailbreak</span></a>
+    <a class="refitem" id="ref-8" href="https://www.first.org/cvss/" target="_blank" rel="noopener"><b><i class="rn">[8]</i>FIRST.org — Especificación CVSS</b> El estándar de severidad del software clásico, el espejo del framework de IA<span>first.org/cvss</span></a>
+    <a class="refitem" id="ref-9" href="https://www.deeplearningbook.org" target="_blank" rel="noopener"><b><i class="rn">[9]</i>📚 Goodfellow, Bengio, Courville — <i>Deep Learning</i> (MIT Press)</b> Cómo aprenden las redes y por qué el conocimiento vive repartido en los pesos · texto completo gratis online<span>deeplearningbook.org</span></a>
+    <a class="refitem" id="ref-10" href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener"><b><i class="rn">[10]</i>📚 Ross Anderson — <i>Security Engineering</i> (3.ª ed.)</b> La referencia de la defensa en profundidad · capítulos gratis online<span>cl.cam.ac.uk/archive/rja14/book.html</span></a>
+    <a class="refitem" id="ref-11" href="https://en.wikipedia.org/wiki/Swiss_cheese_model" target="_blank" rel="noopener"><b><i class="rn">[11]</i>📚 James Reason — <i>Human Error</i> (Cambridge, 1990)</b> Origen del modelo del «queso suizo»: capas imperfectas cuyos agujeros no deben alinearse<span>resumen accesible: wikipedia.org/wiki/Swiss_cheese_model</span></a>
+    <a class="refitem" id="ref-12" href="https://en.wikipedia.org/wiki/Human_Compatible" target="_blank" rel="noopener"><b><i class="rn">[12]</i>📚 Stuart Russell — <i>Human Compatible</i> (2019)</b> Por qué el control de sistemas de IA capaces es un problema de diseño, no un parche<span>ficha: wikipedia.org/wiki/Human_Compatible</span></a>
+    <a class="refitem" id="ref-13" href="https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/" target="_blank" rel="noopener"><b><i class="rn">[13]</i>GitHub Changelog — Fable 5 en Copilot</b> Confirma la retención de datos de 30 días exigida por los clasificadores de Fable 5 (resto de modelos: ZDR)<span>github.blog/changelog</span></a>
   </div>
   <div class="byecard">
     <p style="margin-bottom:.4rem">Si esta pizarra te ha aclarado el caso, <b>compártela</b> 🙌</p>
@@ -756,7 +876,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 
 <script>
 (function(){
-  var N = 16, cur = 0;
+  var N = 17, cur = 0;
   var steps = [], i;
   for(i=0;i<N;i++) steps.push(document.getElementById('s'+i));
   var prev = document.getElementById('prev'), next = document.getElementById('next'),
@@ -771,7 +891,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     cur = n;
     steps[cur].classList.add('on');
     for(i=0;i<N;i++){ dots[i].className = i===cur ? 'on' : (i<cur ? 'done' : ''); }
-    nlab.textContent = cur===0 ? 'PORTADA' : 'PASO '+cur+' / 15';
+    nlab.textContent = cur===0 ? 'PORTADA' : 'PASO '+cur+' / 16';
     prev.disabled = (cur===0);
     next.textContent = cur===N-1 ? 'Fin ✓' : 'Siguiente ›';
     next.disabled = (cur===N-1);
@@ -924,7 +1044,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   }
 
   /* ── índice bottom-sheet ── */
-  var TITLES=['Portada','Qué es una IA','Por qué no se puede borrar','Los gemelos Fable/Mythos','El jailbreak de Amazon','Export controls','Los clasificadores','El margen de seguridad','Los 3 tipos de jailbreak','El veredicto','El parche >99%','Un CVSS para la IA','El regreso, fecha a fecha','Cuánto cuesta Fable 5 💶','Tu app hoy 📱','Cierre, libros y fuentes'];
+  var TITLES=['Portada','Qué es una IA','Por qué no se puede borrar','Los gemelos Fable/Mythos','El jailbreak de Amazon','Export controls','Los clasificadores','El margen de seguridad','Los 3 tipos de jailbreak','El veredicto','El parche >99%','Qué cambió por dentro 🔧','Un CVSS para la IA','El regreso, fecha a fecha','Cuánto cuesta (en €) 💶','Tu app hoy 📱','Referencias y cierre 📚'];
   var sheet=document.getElementById('sheet'), shlist=document.getElementById('shlist');
   TITLES.forEach(function(t,i){
     var b=document.createElement('button'); b.type='button'; b.className='it';
@@ -937,6 +1057,107 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   document.getElementById('shx').addEventListener('click',function(){ sheet.classList.remove('open'); });
   sheet.addEventListener('click',function(e){ if(e.target===sheet) sheet.classList.remove('open'); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') sheet.classList.remove('open'); });
+
+  /* ── popover de citas ── */
+  var REFS = {1:['Anthropic — Redeploying Claude Fable 5 (30 jun 2026)','https://www.anthropic.com/news/redeploying-fable-5'],
+    2:['Anthropic — Introducing Fable 5 & Mythos 5 (9 jun 2026)','https://www.anthropic.com/news/claude-fable-5-mythos-5'],
+    3:['Anthropic — Project Glasswing','https://www.anthropic.com/news/expanding-project-glasswing'],
+    4:['Casa Blanca — Executive Order, 2 jun 2026','https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/'],
+    5:['Anthropic — Precios oficiales de la API','https://platform.claude.com/docs/en/about-claude/pricing'],
+    6:['Anthropic — Créditos de uso en planes de pago','https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans'],
+    7:['HackerOne — Anthropic Cyber Jailbreak','https://hackerone.com/anthropic-cyber-jailbreak/'],
+    8:['FIRST.org — Especificación CVSS','https://www.first.org/cvss/'],
+    9:['Goodfellow, Bengio, Courville — Deep Learning (MIT Press, gratis online)','https://www.deeplearningbook.org'],
+    10:['Ross Anderson — Security Engineering, 3.ª ed. (capítulos gratis)','https://www.cl.cam.ac.uk/archive/rja14/book.html'],
+    11:['James Reason — Human Error (1990) · modelo del queso suizo','https://en.wikipedia.org/wiki/Swiss_cheese_model'],
+    12:['Stuart Russell — Human Compatible (2019)','https://en.wikipedia.org/wiki/Human_Compatible'],
+    13:['GitHub Changelog — Fable 5 en Copilot (retención 30 días)','https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/']};
+  var pop = document.createElement('div'); pop.id='pop';
+  pop.innerHTML='<span class="px" role="button" aria-label="Cerrar">✕</span><div class="pt"></div><a target="_blank" rel="noopener"></a>';
+  document.body.appendChild(pop);
+  var popT=0, popY=0;
+  function closePop(){ pop.classList.remove('on'); }
+  pop.querySelector('.px').addEventListener('click', closePop);
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('sup.ref');
+    if(!s){ if(!e.target.closest('#pop')) closePop(); return; }
+    var r = REFS[+s.dataset.r]; if(!r) return;
+    pop.querySelector('.pt').textContent='['+s.dataset.r+'] '+r[0];
+    var a=pop.querySelector('a'); a.href=r[1]; a.textContent='Abrir fuente ↗';
+    pop.classList.add('on'); popT=Date.now(); popY=window.scrollY;
+    var rc=s.getBoundingClientRect(), pw=Math.min(300,window.innerWidth-24);
+    pop.style.maxWidth=pw+'px';
+    var x=Math.min(Math.max(12,rc.left-40), window.innerWidth-pw-12);
+    var y=rc.bottom+10; if(y+120>window.innerHeight) y=rc.top-10-110;
+    pop.style.left=x+'px'; pop.style.top=Math.max(10,y)+'px';
+  });
+  window.addEventListener('scroll', function(){
+    if(!pop.classList.contains('on')) return;
+    if(Date.now()-popT < 500) return;
+    if(Math.abs(window.scrollY-popY) > 60) closePop();
+  }, {passive:true});
+
+  /* ── arquitectura antes/después ── */
+  var arch=document.getElementById('arch');
+  if(arch){ document.querySelectorAll('[data-a]').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('[data-a]').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on'); arch.classList.toggle('aft', b.dataset.a==='aft');
+    });
+  }); }
+
+  /* ── leyendas dinámicas + presets del simulador ── */
+  var CRIT=[['Otras herramientas (u otros modelos) ya logran lo mismo → aporta poco al atacante.','Supera algo a lo ya disponible.','Logra cosas que hoy ninguna otra herramienta logra.'],
+    ['Sirve para una sola tarea u objetivo concreto.','Funciona contra varios objetivos relacionados.','Desbloquea clases enteras de comportamientos.'],
+    ['Requiere prompting experto y muchos intentos.','Esfuerzo moderado para convertirlo en ataque.','Funciona casi a la primera: listo para usar.'],
+    ['Hace falta conocimiento muy especializado para descubrirla.','Alcanzable con esfuerzo e investigación.','La técnica ya circula públicamente.']];
+  function critTxt(i,v){ var b=v<4?0:(v<7?1:2); return '<b>'+v+'/10:</b> '+CRIT[i][b]; }
+  if(typeof rs!=='undefined'){
+    var es=[1,2,3,4].map(function(i){return document.getElementById('e'+i)});
+    var calc0=calc;
+    calc=function(){ calc0(); rs.forEach(function(r,i){ if(es[i]) es[i].innerHTML=critTxt(i,+r.value); }); };
+    rs.forEach(function(r){ r.addEventListener('input',calc); });
+    calc();
+    document.querySelectorAll('[data-ps]').forEach(function(b){
+      b.addEventListener('click',function(){
+        document.querySelectorAll('[data-ps]').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');
+        b.dataset.ps.split(',').forEach(function(v,i){ rs[i].value=+v; });
+        calc();
+      });
+    });
+    rs.forEach(function(r){ r.addEventListener('input',function(){ document.querySelectorAll('[data-ps]').forEach(function(x){x.classList.remove('on')}); }); });
+  }
+
+  /* ── divisa €/$ en costes ── */
+  var fx=document.getElementById('fx');
+  if(fx){
+    var mode='usd';
+    var bu=document.getElementById('cu-usd'), be=document.getElementById('cu-eur');
+    function eur(n){ return (n*+fx.value).toFixed(2).replace('.',',')+'\u00a0€'; }
+    function usd(n){ return (n%1?n.toFixed(2):n)+'\u00a0$'; }
+    function paint(){
+      var pi=document.getElementById('pn-in'), po=document.getElementById('pn-out'),
+          ai=document.getElementById('pa-in'), ao=document.getElementById('pa-out');
+      if(mode==='usd'){ pi.textContent=usd(10); po.textContent=usd(50);
+        ai.textContent='≈ '+eur(10)+' · por millón de tokens'; ao.textContent='≈ '+eur(50)+' · por millón de tokens'; }
+      else { pi.textContent=eur(10); po.textContent=eur(50);
+        ai.textContent='oficial: '+usd(10)+' · por millón de tokens'; ao.textContent='oficial: '+usd(50)+' · por millón de tokens'; }
+      cc2();
+    }
+    var cc0=cc;
+    function cc2(){ var i=+c1.value,o=+c2.value; co1.textContent=i; co2.textContent=o;
+      var t=i*10+o*50;
+      cg.textContent = mode==='usd' ? usd(t)+'  (≈ '+eur(t)+')' : eur(t)+'  ('+usd(t)+')';
+      cg.style.fontSize='1.15rem';
+    }
+    cc=cc2;
+    c1.addEventListener('input',cc2); c2.addEventListener('input',cc2);
+    fx.addEventListener('input',paint);
+    bu.addEventListener('click',function(){mode='usd';bu.classList.add('on');be.classList.remove('on');paint();});
+    be.addEventListener('click',function(){mode='eur';be.classList.add('on');bu.classList.remove('on');paint();});
+    paint();
+  }
 })();
 </script>
 </body>
