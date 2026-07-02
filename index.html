@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>El caso Fable 5 · Pizarra interactiva | javiercava.com</title>
-<meta name="description" content="19 días apagado por orden del Gobierno de EE. UU. La historia completa de Claude Fable 5 explicada en 12 pasos interactivos: jailbreaks, clasificadores, el margen de seguridad y qué significa para ti hoy. Con fuentes oficiales.">
+<meta name="description" content="19 días apagado por orden del Gobierno de EE. UU. La historia completa de Claude Fable 5 explicada en 15 pasos interactivos: jailbreaks, clasificadores, el margen de seguridad y qué significa para ti hoy. Con fuentes oficiales.">
 <meta name="author" content="Javier Cava">
 <meta property="og:title" content="El caso Fable 5: 19 días apagado. Te lo explico en 12 pasos.">
 <meta property="og:description" content="Pizarra interactiva: qué pasó con el modelo más potente de Anthropic, por qué el Gobierno de EE. UU. lo bloqueó y qué significa que haya vuelto. Para cualquier nivel.">
@@ -230,6 +230,78 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .dots i.on{background:var(--gold);transform:scale(1.25);box-shadow:0 0 8px rgba(232,168,37,.6)}
 .dots i.done{background:rgba(59,158,222,.55)}
 @media(max-width:370px){.nb{padding:.75rem .7rem}}
+
+/* libros */
+.book{display:flex;gap:.8rem;background:linear-gradient(135deg,rgba(232,168,37,.08),rgba(18,112,174,.05));border:1px solid rgba(232,168,37,.3);border-radius:12px;padding:.8rem .95rem;margin:.9rem 0;font-size:.86rem;color:#c4cedb;align-items:flex-start}
+.book .bi{font-size:1.3rem;line-height:1;margin-top:.1rem}
+.book b{color:var(--gold)}
+.book i{color:#aeb9c8}
+.book a{color:var(--blue-b);text-decoration:none;border-bottom:1px dashed rgba(59,158,222,.5)}
+/* demo siguiente palabra */
+.wd{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1rem;margin:1rem 0}
+.wd .sent{font-family:var(--mono);font-size:1.15rem;text-align:center;margin-bottom:1rem;color:var(--tx)}
+.wd .sent .hole{color:var(--gold);border-bottom:2px dashed var(--gold);padding:0 .4em}
+.wd .opts{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.wd .opts button{font-family:var(--mono);font-size:.86rem;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--tx);padding:.75rem .5rem;border-radius:10px;min-height:48px;transition:all .2s}
+.wd .opts button:disabled{opacity:.9}
+.wd .bars{display:none;margin-top:1rem}
+.wd.done .opts button{pointer-events:none}
+.wd.done .bars{display:block;animation:sIn .4s ease}
+.wd .brow{display:grid;grid-template-columns:110px 1fr 52px;gap:.6rem;align-items:center;font-family:var(--mono);font-size:.74rem;color:var(--mut);margin-bottom:.5rem}
+.wd .btrack{height:14px;border-radius:7px;background:rgba(255,255,255,.06);overflow:hidden}
+.wd .bfill{height:100%;width:0;border-radius:7px;background:linear-gradient(90deg,var(--blue),var(--blue-b));transition:width .8s cubic-bezier(.6,0,.2,1)}
+.wd .brow.win .bfill{background:linear-gradient(90deg,#b8860b,var(--gold))}
+.wd .brow.win output{color:var(--gold)}
+.wd output{text-align:right;font-weight:700}
+.wd .verdict{display:none;margin-top:.8rem;font-size:.9rem;color:#c4cedb}
+.wd.done .verdict{display:block}
+.wd .picked{outline:2px solid var(--gold)}
+/* demo borrar pesos */
+.wipe{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}
+@media(max-width:560px){.wipe{grid-template-columns:1fr}}
+.wcard{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:1rem;text-align:center}
+.wcard h5{font-family:var(--mono);font-size:.78rem;color:var(--blue-b);margin-bottom:.6rem}
+.wcard.gold h5{color:var(--gold)}
+.file{font-family:var(--mono);font-size:.78rem;background:#0a0f16;border:1px solid var(--line);border-radius:8px;padding:.5rem .7rem;margin:.35rem auto;max-width:220px;display:flex;justify-content:space-between;gap:.5rem}
+.file.del{opacity:.25;text-decoration:line-through}
+.neu{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin:.4rem auto .6rem;max-width:260px}
+.neu i{width:100%;aspect-ratio:1;border-radius:50%;background:rgba(59,158,222,.45);transition:background .3s}
+.neu i.k{background:rgba(232,168,37,.75)}
+.neu.zap i.k{animation:zapf .55s ease 2}
+@keyframes zapf{50%{background:#e5534b;box-shadow:0 0 10px #e5534b}}
+.wbtn{font-family:var(--mono);font-size:.78rem;font-weight:700;border:1px solid rgba(229,83,75,.5);background:rgba(229,83,75,.1);color:#ff9089;padding:.65rem .9rem;border-radius:10px;width:100%;min-height:48px}
+.wmsg{display:none;margin-top:.7rem;font-size:.84rem;color:#ffb0aa;font-family:var(--mono)}
+.wipe.tried .wmsg{display:block;animation:sIn .35s ease}
+.okmark{color:#63d67a;font-family:var(--mono);font-size:.8rem;margin-top:.5rem;display:block}
+/* costes */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}
+.pcard{background:var(--card2);border:1.5px solid rgba(232,168,37,.4);border-radius:16px;padding:1rem;text-align:center}
+.pcard .pl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;color:var(--mut)}
+.pcard .pn{font-family:var(--mono);font-weight:700;font-size:1.9rem;color:var(--gold);line-height:1.15;margin:.25rem 0}
+.pcard .ps{font-family:var(--mono);font-size:.66rem;color:var(--fnt)}
+.ptbl{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:.9rem 0;font-family:var(--mono);font-size:.78rem}
+.ptbl div{display:flex;justify-content:space-between;gap:.6rem;padding:.6rem .9rem;border-bottom:1px solid var(--line2);background:var(--card);color:#c4cedb}
+.ptbl div:last-child{border-bottom:0}
+.ptbl div.hd{background:#0d1622;color:var(--gold);font-weight:700;letter-spacing:.08em;font-size:.66rem}
+.ptbl b{color:var(--tx)}
+.quota{margin:1rem 0 .4rem}
+.qbar{position:relative;height:38px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--line);overflow:visible}
+.qfill{position:absolute;inset:0;width:50%;border-radius:10px 0 0 10px;background:repeating-linear-gradient(-45deg,rgba(232,168,37,.35) 0 8px,rgba(232,168,37,.18) 8px 16px);border-right:2px dashed var(--gold)}
+.qfill::after{content:"zona Fable 5 · máx. 50%";position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.6rem;color:var(--gold);white-space:nowrap;font-weight:700}
+.qlbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.62rem;color:var(--mut);margin-top:.4rem}
+/* índice bottom-sheet */
+#sheet{position:fixed;inset:0;background:rgba(4,7,11,.72);z-index:200;display:none;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+#sheet.open{display:block}
+#sheet .panel{position:absolute;left:0;right:0;bottom:0;background:#0e1520;border-top:1px solid var(--line);border-radius:20px 20px 0 0;padding:1rem .9rem calc(1rem + env(safe-area-inset-bottom,0px));max-height:72vh;overflow-y:auto;animation:upIn .28s ease}
+@keyframes upIn{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+#sheet h5{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;color:var(--gold);margin:.2rem .3rem .8rem;display:flex;justify-content:space-between}
+#sheet h5 button{background:none;border:0;color:var(--mut);font-size:1.1rem}
+#sheet .it{display:flex;gap:.7rem;align-items:center;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line2);padding:.72rem .3rem;font-family:var(--mono);font-size:.8rem;color:#c4cedb;min-height:46px}
+#sheet .it b{color:var(--gold);min-width:2ch}
+#sheet .it.cur{color:#fff;background:rgba(18,112,174,.15);border-radius:8px}
+.nmid{cursor:pointer;border:0;background:transparent;padding:0}
+.khint{display:none;font-family:var(--mono);font-size:.6rem;color:var(--fnt);text-align:center;margin-top:.35rem}
+@media(min-width:960px){.khint{display:block}}
 </style>
 </head>
 <body>
@@ -253,10 +325,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <span class="tag19">⛔ 19 DÍAS FUERA DE SERVICIO</span>
     <h1>El caso <em>Fable&nbsp;5</em></h1>
     <p class="big">El 9 de junio, Anthropic lanzó el modelo de IA más potente de su historia. <b>Tres días después, el Gobierno de EE.&nbsp;UU. lo bloqueó</b> y desapareció para todo el mundo. El 1 de julio volvió.</p>
-    <p class="big">Esta pizarra te explica <b>qué pasó, por qué y qué significa para ti</b> — en 12 pasos, paso a paso, con fuentes oficiales.</p>
+    <p class="big">Esta pizarra te explica <b>qué pasó, por qué y qué significa para ti</b> — en 15 pasos, empezando desde cero — aunque nunca hayas tocado una IA — y con fuentes oficiales y libros de referencia.</p>
     <div class="meta">
       <span>✍️ <b>Javier Cava</b></span>
-      <span>⏱️ ≈ 5 min</span>
+      <span>⏱️ ≈ 7 min</span>
       <span>📚 Fuentes: Anthropic</span>
     </div>
     <button class="cta" id="start" type="button">Empezar la historia <span aria-hidden="true">→</span></button>
@@ -264,9 +336,62 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- PASO 1 · LOS GEMELOS -->
+
+<!-- PASO 1 · QUÉ ES UNA IA -->
 <section class="step" id="s1">
-  <div class="eyeb">Paso 1 · Los protagonistas</div>
+  <div class="eyeb">Paso 1 · Empecemos de cero</div>
+  <h2>¿Qué es una IA como Claude?</h2>
+  <p>Olvida la ciencia ficción. Un <span class="kw">modelo de lenguaje</span> (LLM) hace una única cosa, repetida millones de veces por segundo: <b>predecir la siguiente palabra</b>. Compruébalo tú:</p>
+  <div class="wd" id="wd">
+    <div class="sent">«El gato se subió al <span class="hole">___</span>»</div>
+    <div class="opts">
+      <button type="button" data-w="0">tejado</button>
+      <button type="button" data-w="1">árbol</button>
+      <button type="button" data-w="2">coche</button>
+      <button type="button" data-w="3">submarino</button>
+    </div>
+    <div class="bars">
+      <div class="brow win"><span>tejado</span><div class="btrack"><div class="bfill" data-p="62"></div></div><output>62%</output></div>
+      <div class="brow"><span>árbol</span><div class="btrack"><div class="bfill" data-p="23"></div></div><output>23%</output></div>
+      <div class="brow"><span>coche</span><div class="btrack"><div class="bfill" data-p="9"></div></div><output>9%</output></div>
+      <div class="brow"><span>submarino</span><div class="btrack"><div class="bfill" data-p="1"></div></div><output>0,4%</output></div>
+    </div>
+    <p class="verdict" id="wd-v">—</p>
+  </div>
+  <p>¿Y de dónde salen esas probabilidades? De su <b>entrenamiento</b>: el modelo "leyó" una parte enorme de internet y de miles de libros. Y aquí está la semilla de todo este caso: <b>en ese texto también hay conocimiento de ciberseguridad</b> — incluida la ofensiva.</p>
+  <div class="def"><b>📖 LLM (Large Language Model):</b> programa entrenado con cantidades masivas de texto para predecir la siguiente palabra. Encadenando predicciones produce respuestas, código o análisis completos.</div>
+  <div class="book"><span class="bi">📚</span><span><b>Para profundizar:</b> <i>Deep Learning</i> — Goodfellow, Bengio y Courville (MIT Press). El manual de referencia sobre cómo las redes neuronales aprenden a partir de ejemplos. <a href="https://www.deeplearningbook.org" target="_blank" rel="noopener">Texto completo gratis online</a>.</span></div>
+  <div class="tech"><b>// detalle técnico</b>Entrenar = ajustar los <b>parámetros</b> (o "pesos") de la red — miles de millones de números — para minimizar el error de predicción sobre el corpus. Todo lo que el modelo "sabe" queda codificado en esos pesos, no en documentos consultables. Recuerda este detalle: es la clave del paso siguiente.</div>
+</section>
+
+<!-- PASO 2 · NO SE PUEDE BORRAR -->
+<section class="step" id="s2">
+  <div class="eyeb">Paso 2 · La raíz del problema</div>
+  <h2>Por qué no se puede «borrar» lo peligroso</h2>
+  <p>La intuición de cualquiera: <i>«si el modelo sabe cosas peligrosas… que las borren y listo»</i>. No funciona así — y entenderlo explica <b>de raíz</b> por qué hubo que bloquear el modelo <b>por fuera</b>. Compara:</p>
+  <div class="wipe" id="wipe">
+    <div class="wcard">
+      <h5>🗄️ UNA BASE DE DATOS</h5>
+      <div class="file"><span>facturas.xlsx</span><span>✓</span></div>
+      <div class="file" id="fdel"><span>hacking.txt</span><span>🗑️</span></div>
+      <div class="file"><span>recetas.docx</span><span>✓</span></div>
+      <span class="okmark">✓ Borras el archivo y ese saber desaparece</span>
+    </div>
+    <div class="wcard gold">
+      <h5>🧠 UN MODELO DE IA</h5>
+      <div class="neu" id="neu" aria-hidden="true"></div>
+      <button class="wbtn" id="wbtn" type="button">🗑️ Intentar borrar «el conocimiento ciber»</button>
+      <span class="wmsg">✗ Imposible: está repartido entre miles de millones de parámetros que también sostienen el idioma, la lógica y el código. No hay cirugía sin dañar el conjunto.</span>
+    </div>
+  </div>
+  <p>Conclusión de ingeniería: si no puedes quitarlo <b>de dentro</b>, pones la seguridad <b>por fuera</b> — puertas (clasificadores), llaves (acceso restringido) y vigilancia. Exactamente el diseño que verás en los próximos pasos… y lo que el Gobierno bloqueó fue el edificio entero mientras revisaba esas puertas.</p>
+  <div class="book"><span class="bi">📚</span><span><b>La idea de fondo:</b> en <i>Deep Learning</i> (cap. sobre representaciones distribuidas) se explica por qué cada "concepto" vive repartido entre muchísimos parámetros compartidos — no en una casilla que se pueda vaciar.</span></div>
+  <div class="tech"><b>// detalle técnico</b>Existe un campo de investigación llamado <b>machine unlearning</b> (hacer que un modelo "olvide"), pero hoy no ofrece garantías a escala frontier. Por eso toda la industria protege estos modelos con <b>salvaguardas de despliegue</b>, no con borrados: es también el motivo de que existan dos versiones (Fable con puertas, Mythos con llaves) en lugar de un único modelo "limpio".</div>
+</section>
+
+<!-- PASO 3 · LOS GEMELOS -->
+<section class="step" id="s3">
+  <div class="eyeb">Paso 3 · Los protagonistas</div>
   <h2>Un mismo modelo, dos versiones</h2>
   <p>El <b>9 de junio de 2026</b> Anthropic no lanzó un modelo: lanzó <b>dos versiones del mismo modelo</b>, con reglas muy distintas.</p>
   <div class="diag" data-t="fig. 1 · los gemelos">
@@ -294,8 +419,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 2 · EL HALLAZGO -->
-<section class="step" id="s2">
-  <div class="eyeb">Paso 2 · Día 3: el hallazgo</div>
+<section class="step" id="s4">
+  <div class="eyeb">Paso 4 · Día 3: el hallazgo</div>
   <h2>Amazon encuentra un «jailbreak»</h2>
   <p>El <b>12 de junio</b>, investigadores de <b>Amazon</b> descubren una forma de engañar a las protecciones de Fable 5:</p>
   <div class="flow">
@@ -308,8 +433,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 3 · EXPORT CONTROLS -->
-<section class="step" id="s3">
-  <div class="eyeb">Paso 3 · La reacción</div>
+<section class="step" id="s5">
+  <div class="eyeb">Paso 5 · La reacción</div>
   <h2>El Gobierno aprieta el botón rojo</h2>
   <p>Ese mismo día, EE.&nbsp;UU. impone <span class="kw">controles de exportación</span> sobre Fable 5 y Mythos 5: <b>prohibido dar acceso a nacionales extranjeros</b>, dentro o fuera del país, con efecto <b>inmediato</b>.</p>
   <div class="lock">
@@ -322,8 +447,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 4 · CLASIFICADORES -->
-<section class="step" id="s4">
-  <div class="eyeb">Paso 4 · A la pizarra 🧑‍🏫</div>
+<section class="step" id="s6">
+  <div class="eyeb">Paso 6 · A la pizarra 🧑‍🏫</div>
   <h2>¿Cómo se protege Fable 5? Los clasificadores</h2>
   <p>Para entender el fallo, primero la defensa. Fable 5 no se fía solo de su «educación»: <b>cada petición pasa antes por un control</b>.</p>
   <div class="flow">
@@ -335,12 +460,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="out ok"><b>✅ Claramente segura</b><p>Fable 5 responde con normalidad. Es lo que pasa con la inmensa mayoría de peticiones.</p></div>
     <div class="out ko"><b>🚫 Bloqueada</b><p>Se te avisa… y no te quedas colgado: tu petición se <b>reenvía automáticamente a Opus&nbsp;4.8</b>, que la responde.</p></div>
   </div>
+  <div class="book"><span class="bi">📚</span><span><b>De dónde viene la idea:</b> el modelo del <i>queso suizo</i> de James Reason (<i>Human Error</i>, 1990) — varias capas imperfectas cuyos agujeros no se alinean — y la <i>defensa en profundidad</i> de la ingeniería de seguridad clásica (Ross Anderson, <i>Security Engineering</i>, 3.ª ed. — <a href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener">capítulos gratis online</a>).</span></div>
   <div class="tech"><b>// detalle técnico</b>Es una estrategia de <b>defensa en profundidad</b>: ninguna capa es perfecta por sí sola, así que se apilan varias — entrenamiento del modelo para rechazar + clasificadores de entrada y salida + análisis retroactivo de patrones de mal uso. Romper una capa no basta.</div>
 </section>
 
 <!-- PASO 5 · MARGEN -->
-<section class="step" id="s5">
-  <div class="eyeb">Paso 5 · El concepto clave 🔑</div>
+<section class="step" id="s7">
+  <div class="eyeb">Paso 7 · El concepto clave 🔑</div>
   <h2>El «margen de seguridad»</h2>
   <p>Aquí está la idea que explica <b>todo</b> el caso. El clasificador no bloquea solo «lo malo»: se calibra a propósito para bloquear <b>también peticiones que probablemente son inocentes</b>. Solo pasa lo que parece <i>claramente</i> seguro.</p>
   <p>Compara las dos calibraciones — toca los botones:</p>
@@ -377,8 +503,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 6 · TIPOS DE JAILBREAK -->
-<section class="step" id="s6">
-  <div class="eyeb">Paso 6 · No todos son iguales</div>
+<section class="step" id="s8">
+  <div class="eyeb">Paso 8 · No todos son iguales</div>
   <h2>Los 3 tipos de jailbreak</h2>
   <p>Un jailbreak «perfora» la zona bloqueada. La pregunta clave es: <b>¿hasta dónde llega el agujero?</b> Toca cada tipo:</p>
   <div class="scbtns three">
@@ -419,8 +545,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 7 · VEREDICTO -->
-<section class="step" id="s7">
-  <div class="eyeb">Paso 7 · La revisión</div>
+<section class="step" id="s9">
+  <div class="eyeb">Paso 9 · La revisión</div>
   <h2>El veredicto: nada exclusivo de Fable 5</h2>
   <p>Durante dos semanas, Anthropic revisó la evidencia junto al Gobierno y a Amazon. La pregunta era: <b>¿lo que hizo Fable 5 podía hacerlo cualquier otro modelo?</b></p>
   <div class="chk">
@@ -439,8 +565,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 8 · EL PARCHE -->
-<section class="step" id="s8">
-  <div class="eyeb">Paso 8 · La respuesta</div>
+<section class="step" id="s10">
+  <div class="eyeb">Paso 10 · La respuesta</div>
   <h2>Parche: clasificador mejorado</h2>
   <p>Aunque el jailbreak era menor, se corrigió rápido. Anthropic entrenó, junto al Gobierno, un <b>clasificador mejorado</b> que ataja la técnica reportada:</p>
   <div class="stat">
@@ -454,8 +580,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 9 · FRAMEWORK -->
-<section class="step" id="s9">
-  <div class="eyeb">Paso 9 · La lección de fondo</div>
+<section class="step" id="s11">
+  <div class="eyeb">Paso 11 · La lección de fondo</div>
   <h2>Un «CVSS» para jailbreaks</h2>
   <p>La verdadera moraleja: una técnica <b>menor</b> provocó un apagón mundial porque <b>la industria no tiene una escala común</b> para medir la gravedad de un jailbreak. En software clásico eso existe desde hace años (se llama CVSS); en IA, no.</p>
   <p>Por eso Anthropic, <b>Amazon, Microsoft y Google</b> están redactando ese estándar. Cada jailbreak se puntuaría en 4 criterios:</p>
@@ -477,12 +603,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     </div>
     <div class="note">* Simulación didáctica para interiorizar los criterios — el método de puntuación oficial aún no se ha publicado. Los valores iniciales aproximan el caso Amazon.</div>
   </div>
+  <div class="book"><span class="bi">📐</span><span><b>El espejo del software clásico:</b> la especificación oficial del CVSS la mantiene FIRST.org — <a href="https://www.first.org/cvss/" target="_blank" rel="noopener">first.org/cvss</a>. Es exactamente el tipo de estándar común que la IA aún no tiene.</span></div>
   <div class="tech"><b>// detalle técnico</b>El framework calibraría la respuesta según severidad: para la clase más grave (p.&nbsp;ej., explotación activa contra redes eléctricas o banca) → mitigaciones preliminares inmediatas. Se suman un equipo de <b>monitorización 24/7</b> de canales de reporte y un programa en <b>HackerOne</b> para que investigadores envíen posibles cyber‑jailbreaks de Fable 5.</div>
 </section>
 
 <!-- PASO 10 · EL REGRESO -->
-<section class="step" id="s10">
-  <div class="eyeb">Paso 10 · Desenlace</div>
+<section class="step" id="s12">
+  <div class="eyeb">Paso 12 · Desenlace</div>
   <h2>El regreso, fecha a fecha</h2>
   <div class="tl">
     <div class="tli"><span class="d">09 JUN</span><p>Lanzamiento de Fable 5 (público) y Mythos 5 (solo ciberdefensa aprobada).</p></div>
@@ -495,9 +622,62 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   <div class="tech"><b>// detalle técnico</b>La ampliación de Mythos 5 al resto de socios nacionales e internacionales del programa Glasswing sigue coordinándose con el Gobierno. Todo el episodio se apoya además en la Orden Ejecutiva del 2 de junio (<i>Promoting Advanced AI Innovation and Security</i>) y deriva en 4 compromisos de colaboración: evaluación pre‑lanzamiento con acceso anticipado, información rápida sobre salvaguardas, recursos dedicados a investigación conjunta y un estándar común de industria.</div>
 </section>
 
-<!-- PASO 11 · TU APP HOY -->
-<section class="step" id="s11">
-  <div class="eyeb">Paso 11 · En tu pantalla 📱</div>
+
+<!-- PASO 13 · COSTE -->
+<section class="step" id="s13">
+  <div class="eyeb">Paso 13 · La factura 💶</div>
+  <h2>¿Cuánto cuesta Fable 5?</h2>
+  <p>La otra mitad de «qué significa para ti». Hay dos formas de pagarlo — como <b>usuario normal</b> (suscripción) o como <b>empresa/developer</b> (API) — y las dos tienen letra pequeña.</p>
+
+  <h3 style="font-family:var(--mono);font-size:1rem;color:var(--blue-b);margin:1.2rem 0 .5rem">🏢 Vía API (developers y empresas)</h3>
+  <div class="price">
+    <div class="pcard"><div class="pl">ENTRADA</div><div class="pn">10&nbsp;$</div><div class="ps">por millón de tokens</div></div>
+    <div class="pcard"><div class="pl">SALIDA</div><div class="pn">50&nbsp;$</div><div class="ps">por millón de tokens</div></div>
+  </div>
+  <div class="ptbl">
+    <div class="hd"><span>MODELO</span><span>ENTRADA / SALIDA ($/Mtok)</span></div>
+    <div><span><b>Fable 5</b> (tope de gama)</span><span><b>10 / 50</b></span></div>
+    <div><span>Opus 4.8</span><span>5 / 25 · la mitad</span></div>
+    <div><span>Sonnet 5 (intro hasta 31 ago)</span><span>2 / 10 · luego 3 / 15</span></div>
+  </div>
+  <div class="chips"><span class="chip c-g">CONTEXTO 1M INCLUIDO</span><span class="chip c-g">BATCH −50%</span><span class="chip c-g">CACHÉ DE PROMPTS ≈ −90% ENTRADA</span></div>
+  <p style="font-size:.92rem">💡 Detalle elegante del diseño: si el clasificador bloquea tu petición y la redirige a Opus 4.8, <b>esa respuesta se factura a precio de Opus</b>, no de Fable.</p>
+
+  <div class="sim">
+    <h4>🧮 Calcula un trabajo (tarifas API oficiales)</h4>
+    <div class="sr"><div class="st"><label for="c1">Tokens de ENTRADA (millones)</label><output id="co1">2</output></div><input type="range" id="c1" min="0" max="20" step="0.5" value="2" aria-label="Millones de tokens de entrada"></div>
+    <div class="sr"><div class="st"><label for="c2">Tokens de SALIDA (millones)</label><output id="co2">0.5</output></div><input type="range" id="c2" min="0" max="10" step="0.25" value="0.5" aria-label="Millones de tokens de salida"></div>
+    <div class="gauge"><div class="gs" id="cg">45&nbsp;$</div><div class="gl"><b>Coste estimado del trabajo</b><span>Referencia: 1M tokens ≈ 750.000 palabras (1 token ≈ 4 caracteres). La salida a 50&nbsp;$/M es la que domina la factura.</span></div></div>
+  </div>
+
+  <h3 style="font-family:var(--mono);font-size:1rem;color:var(--blue-b);margin:1.4rem 0 .5rem">🙋 Vía suscripción (usuario normal)</h3>
+  <div class="ptbl">
+    <div class="hd"><span>PLAN</span><span>¿FABLE 5?</span></div>
+    <div><span>Free</span><span>✗ no incluido</span></div>
+    <div><span>Pro (≈20&nbsp;$/mes)</span><span>✓ con las reglas de abajo</span></div>
+    <div><span>Max 5× / 20× (≈100 / 200&nbsp;$/mes)</span><span>✓ con las reglas de abajo</span></div>
+    <div><span>Team</span><span>✓ con las reglas de abajo</span></div>
+    <div><span>Enterprise</span><span>premium: ✓ ventana · estándar: solo créditos</span></div>
+  </div>
+
+  <p><b>Y esto es exactamente lo que significan «los límites de uso»:</b></p>
+  <div class="quota">
+    <div class="qbar"><div class="qfill"></div></div>
+    <div class="qlbl"><span>0%</span><span>tu depósito semanal de uso del plan</span><span>100%</span></div>
+  </div>
+  <div class="flow" style="margin-top:1.2rem">
+    <div class="fn"><div class="fc"><b>Tu plan = un depósito semanal</b><p>Cada suscripción incluye una cantidad de uso que se rellena cada semana (no se mide en € sino en "uso").</p></div></div>
+    <div class="fn"><div class="fc"><b>Hasta el 7 de julio: Fable bebe de ahí, con tope</b><p>Puede consumir <b>como máximo la mitad</b> de tu depósito semanal (la zona rayada). El resto queda a salvo para Opus, Sonnet y Haiku.</p></div></div>
+    <div class="fn"><div class="fc"><b>Y bebe rápido: ≈ 2× más que Opus</b><p>Cada interacción con Fable 5 gasta el doble de "uso" que una equivalente con Opus 4.8 — es literalmente el aviso de tu app.</p></div></div>
+    <div class="fn"><div class="fc"><b>Desde el 8 de julio: créditos de uso</b><p>Fable sale del depósito y pasa a <span class="kw">créditos prepagados</span> a tarifa API (10/50&nbsp;$ por Mtok). Sin créditos activados → sin Fable 5, aunque pagues Pro o Max.</p></div></div>
+  </div>
+  <div class="def"><b>📖 CRÉDITOS DE USO:</b> saldo de prepago que activas en tu cuenta (solo desde la versión web si compraste la suscripción por App Store/Google Play) y del que se descuenta cada petición a tarifa API. Según la documentación, con techo de gasto diario configurable (máx. 2.000&nbsp;$/día).</div>
+  <div class="tech"><b>// letra pequeña para empresas</b>Tres cosas que un FinOps debe saber: (1) Fable 5 exige <b>retención de datos de 30 días</b> para operar sus clasificadores — relevante para GDPR/compliance; Opus 4.8 mantiene Zero Data Retention. (2) La inferencia con enrutado solo-EE.UU. lleva recargo (~×1,1). (3) Estimaciones publicadas de coste real: un developer con ~2h/día de trabajo agéntico ≈ 100–300&nbsp;$/mes en créditos además de su asiento — presupuesta antes de desplegar en equipo.</div>
+</section>
+
+<!-- PASO 14 · TU APP HOY -->
+<section class="step" id="s14">
+  <div class="eyeb">Paso 14 · En tu pantalla 📱</div>
   <h2>Qué significa lo que ves hoy en la app</h2>
   <p>Si abres Claude estos días verás este aviso. Vamos a decodificarlo, línea a línea:</p>
   <div class="shot">
@@ -529,20 +709,26 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 </section>
 
 <!-- PASO 12 · CIERRE -->
-<section class="step" id="s12">
-  <div class="eyeb">Paso 12 · Para llevar</div>
+<section class="step" id="s15">
+  <div class="eyeb">Paso 15 · Para llevar</div>
   <h2>Las 3 ideas con las que quedarte</h2>
   <div class="tk">
     <div>El apagón <b>no</b> lo causó una capacidad peligrosa real: lo causó la <b>ausencia de un estándar</b> para medir la gravedad de un jailbreak. Ese estándar (el «CVSS de la IA») ya se está redactando entre Anthropic, Amazon, Microsoft y Google.</div>
     <div>El <b>margen de seguridad</b> funcionó como se diseñó: el jailbreak perforó el clasificador… y aterrizó en zona inofensiva. Los falsos positivos que a veces sufres son el precio de ese colchón.</div>
     <div>En lo práctico: Fable 5 está <b>incluido hasta el 7 de julio</b> (máx. 50&nbsp;% de tu cuota semanal); desde el 8, <b>créditos de uso</b>. Y consume mucho más rápido que Opus 4.8 — resérvalo para lo difícil.</div>
   </div>
+  <h2 style="margin-top:1.6rem">📚 Biblioteca para ir más lejos</h2>
+  <div class="book"><span class="bi">🧠</span><span><b><i>Deep Learning</i></b> — Goodfellow, Bengio, Courville (MIT Press). Cómo aprenden las redes neuronales y por qué el conocimiento vive en los pesos. <a href="https://www.deeplearningbook.org" target="_blank" rel="noopener">Gratis online</a>.</span></div>
+  <div class="book"><span class="bi">🛡️</span><span><b><i>Security Engineering</i> (3.ª ed.)</b> — Ross Anderson. La biblia de la defensa en profundidad y el diseño de sistemas seguros. <a href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener">Capítulos gratis online</a>.</span></div>
+  <div class="book"><span class="bi">🧀</span><span><b><i>Human Error</i></b> — James Reason (1990). El origen del modelo del "queso suizo": capas imperfectas cuyos agujeros no deben alinearse.</span></div>
+  <div class="book"><span class="bi">🤖</span><span><b><i>Human Compatible</i></b> — Stuart Russell. Por qué controlar sistemas de IA muy capaces es un problema de diseño, no un parche de última hora.</span></div>
   <h2 style="margin-top:1.6rem">Fuentes oficiales</h2>
   <div class="src">
     <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener"><b>Redeploying Claude Fable 5</b> — el post oficial del caso (30 jun)<span>anthropic.com/news/redeploying-fable-5</span></a>
     <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener"><b>Introducing Fable 5 &amp; Mythos 5</b> — anuncio de lanzamiento (9 jun)<span>anthropic.com/news/claude-fable-5-mythos-5</span></a>
     <a href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank" rel="noopener"><b>Project Glasswing</b> — el programa de socios de ciberdefensa<span>anthropic.com/news/expanding-project-glasswing</span></a>
     <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank" rel="noopener"><b>Executive Order (2 jun 2026)</b> — Promoting Advanced AI Innovation and Security<span>whitehouse.gov/presidential-actions/…</span></a>
+    <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener"><b>Precios oficiales de la API</b> — tarifas por modelo, batch y caché<span>platform.claude.com/docs</span></a>
     <a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener"><b>Créditos de uso</b> — cómo funcionan a partir del 8 de julio<span>support.claude.com</span></a>
     <a href="https://hackerone.com/anthropic-cyber-jailbreak/" target="_blank" rel="noopener"><b>Programa HackerOne</b> — reporte de cyber‑jailbreaks de Fable 5<span>hackerone.com/anthropic-cyber-jailbreak</span></a>
   </div>
@@ -558,17 +744,19 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 <nav class="nav" aria-label="Navegación de pasos">
   <div class="nrow">
     <button class="nb" id="prev" type="button" aria-label="Paso anterior">‹ Anterior</button>
-    <div class="nmid">
+    <button class="nmid" id="nmid" type="button" aria-label="Abrir índice de pasos">
       <span class="nstep" id="nlab">PORTADA</span>
       <div class="dots" id="dots" aria-hidden="true"></div>
-    </div>
+    </button>
     <button class="nb next" id="next" type="button" aria-label="Paso siguiente">Siguiente ›</button>
   </div>
+  <div class="khint">usa ← → para navegar · clic en el centro abre el índice</div>
 </nav>
+<div id="sheet" role="dialog" aria-label="Índice"><div class="panel"><h5>// ÍNDICE — toca para saltar <button id="shx" type="button" aria-label="Cerrar">✕</button></h5><div id="shlist"></div></div></div>
 
 <script>
 (function(){
-  var N = 13, cur = 0;
+  var N = 16, cur = 0;
   var steps = [], i;
   for(i=0;i<N;i++) steps.push(document.getElementById('s'+i));
   var prev = document.getElementById('prev'), next = document.getElementById('next'),
@@ -583,7 +771,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     cur = n;
     steps[cur].classList.add('on');
     for(i=0;i<N;i++){ dots[i].className = i===cur ? 'on' : (i<cur ? 'done' : ''); }
-    nlab.textContent = cur===0 ? 'PORTADA' : 'PASO '+cur+' / 12';
+    nlab.textContent = cur===0 ? 'PORTADA' : 'PASO '+cur+' / 15';
     prev.disabled = (cur===0);
     next.textContent = cur===N-1 ? 'Fin ✓' : 'Siguiente ›';
     next.disabled = (cur===N-1);
@@ -692,6 +880,63 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   }
   rs.forEach(function(r){ r.addEventListener('input',calc); });
   calc();
+
+  /* ── paso 1: demo siguiente palabra ── */
+  var wd = document.getElementById('wd');
+  if(wd){
+    var wdv = document.getElementById('wd-v');
+    var msgs = ['🎯 ¡Igual que el modelo! «tejado» es la opción con más probabilidad (62%).',
+                '👍 Muy razonable — el modelo le da un 23%. Su favorita era «tejado» (62%).',
+                '🤔 Posible, pero poco probable (9%). El modelo prefería «tejado» (62%).',
+                '😄 Un 0,4%: casi imposible… pero fíjate: nunca es 0. El modelo no dice "no", reparte probabilidades.'];
+    wd.querySelectorAll('.opts button').forEach(function(b){
+      b.addEventListener('click', function(){
+        wd.classList.add('done'); b.classList.add('picked');
+        wdv.textContent = msgs[+b.dataset.w] + ' Eso es TODO lo que hace: elegir la siguiente palabra, millones de veces seguidas — y de ahí salen respuestas, código y análisis enteros.';
+        requestAnimationFrame(function(){ wd.querySelectorAll('.bfill').forEach(function(f){ f.style.width = f.dataset.p + '%'; }); });
+      });
+    });
+  }
+
+  /* ── paso 2: demo borrar pesos ── */
+  var neu = document.getElementById('neu'), wipe = document.getElementById('wipe');
+  if(neu){
+    var K = [3,7,14,22,29,33,41,48,55,61,68,74,83,89,95,102,110,116];
+    for(var j=0;j<120;j++){ var d=document.createElement('i'); if(K.indexOf(j)>-1) d.className='k'; neu.appendChild(d); }
+    document.getElementById('wbtn').addEventListener('click', function(){
+      neu.classList.remove('zap'); void neu.offsetWidth; neu.classList.add('zap');
+      wipe.classList.add('tried');
+      var fd = document.getElementById('fdel'); if(fd) fd.classList.add('del');
+    });
+  }
+
+  /* ── paso 13: calculadora de coste API ── */
+  var c1 = document.getElementById('c1');
+  if(c1){
+    var c2=document.getElementById('c2'), co1=document.getElementById('co1'), co2=document.getElementById('co2'), cg=document.getElementById('cg');
+    function cc(){
+      var i=+c1.value, o=+c2.value;
+      co1.textContent=i; co2.textContent=o;
+      var t=i*10+o*50;
+      cg.innerHTML=(t%1?t.toFixed(1):t)+'&nbsp;$';
+    }
+    c1.addEventListener('input',cc); c2.addEventListener('input',cc); cc();
+  }
+
+  /* ── índice bottom-sheet ── */
+  var TITLES=['Portada','Qué es una IA','Por qué no se puede borrar','Los gemelos Fable/Mythos','El jailbreak de Amazon','Export controls','Los clasificadores','El margen de seguridad','Los 3 tipos de jailbreak','El veredicto','El parche >99%','Un CVSS para la IA','El regreso, fecha a fecha','Cuánto cuesta Fable 5 💶','Tu app hoy 📱','Cierre, libros y fuentes'];
+  var sheet=document.getElementById('sheet'), shlist=document.getElementById('shlist');
+  TITLES.forEach(function(t,i){
+    var b=document.createElement('button'); b.type='button'; b.className='it';
+    b.innerHTML='<b>'+(i===0?'▸':i)+'</b> '+t;
+    b.addEventListener('click',function(){ sheet.classList.remove('open'); go(i); });
+    shlist.appendChild(b);
+  });
+  function refreshSheet(){ shlist.querySelectorAll('.it').forEach(function(b,i){ b.classList.toggle('cur',i===cur); }); }
+  document.getElementById('nmid').addEventListener('click',function(){ refreshSheet(); sheet.classList.add('open'); });
+  document.getElementById('shx').addEventListener('click',function(){ sheet.classList.remove('open'); });
+  sheet.addEventListener('click',function(e){ if(e.target===sheet) sheet.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') sheet.classList.remove('open'); });
 })();
 </script>
 </body>
