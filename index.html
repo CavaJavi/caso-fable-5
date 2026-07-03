@@ -919,6 +919,23 @@ body.lock{overflow:hidden}
     <div>El <b>margen de seguridad</b> funcionó como se diseñó: el jailbreak perforó el clasificador… y aterrizó en zona inofensiva. Los falsos positivos que a veces sufres son el precio de ese colchón.</div>
     <div>En lo práctico: Fable 5 está <b>incluido hasta el 7 de julio</b> (máx. 50&nbsp;% de tu cuota semanal); desde el 8, <b>créditos de uso</b>. Y consume mucho más rápido que Opus 4.8 — resérvalo para lo difícil.</div>
   </div>
+  
+  <div class="eyeb" style="margin-top:2.2rem">Mi terreno · ERP 🎯</div>
+  <h2>¿Y si esto vive dentro de Business Central?</h2>
+  <p>Es la pregunta que me hacen cada semana. Hay <b>tres vías documentadas por Microsoft</b> para poner un modelo clase Fable a trabajar con tu ERP — y cuatro decisiones que este caso obliga a tomar antes de desplegar un agente:</p>
+  <div class="arch aft" style="margin-top:1rem">
+    <div class="layer"><span class="li">🔌</span><span><h5>Vía 1 · El servidor MCP oficial de BC</h5><p>Business Central expone sus API pages a agentes de IA mediante su servidor MCP — y la documentación de Microsoft cita a <b>Claude</b> entre los clientes soportados. Autenticación OAuth&nbsp;2.0 con Entra ID, el agente hereda <b>tus</b> permisos y auditoría, solo lectura por defecto y escrituras únicamente si las habilitas por API<sup class="ref" data-r="14">[14]</sup>.</p></span></div>
+    <div class="layer"><span class="li">🧩</span><span><h5>Vía 2 · Copilot Studio con modelo Anthropic</h5><p>El low-code de Microsoft permite <b>elegir modelo Anthropic al crear el agente</b> (previo opt-in del administrador en el M365 Admin Center) y conectarle las herramientas MCP de Business Central<sup class="ref" data-r="15">[15]</sup><sup class="ref" data-r="17">[17]</sup>.</p></span></div>
+    <div class="layer"><span class="li">☁️</span><span><h5>Vía 3 · Tu app en Microsoft Foundry</h5><p>Claude está en <b>disponibilidad general en Foundry</b>: Entra ID, RBAC de Azure, facturación integrada (CCU/MACC) y zonas de datos Global/EE.UU. Anthropic lista Foundry entre las superficies donde Fable 5 se rehabilita<sup class="ref" data-r="16">[16]</sup><sup class="ref" data-r="1">[1]</sup>. Tu app llama al modelo y opera BC por API o MCP.</p></span></div>
+  </div>
+  <p style="margin-top:1.2rem"><b>Y las 4 decisiones que este caso deja encima de la mesa:</b></p>
+  <div class="tk">
+    <div><i>1</i><b>Resiliencia de modelo.</b> 19 días de apagón global demuestran que un modelo frontera puede desaparecer por decisión regulatoria. Diseña tus agentes de BC con modelo de respaldo — el patrón que el propio sistema valida redirigiendo a Opus 4.8 cuando bloquea<sup class="ref" data-r="1">[1]</sup>.</div>
+    <div><i>2</i><b>RGPD antes que capacidad.</b> En la UE, los modelos Anthropic del stack M365/Copilot Studio van <b>desactivados por defecto y fuera del EU Data Boundary</b>; y la clase Mythos (Fable 5) retiene datos hasta 30 días<sup class="ref" data-r="15">[15]</sup>, mientras que Foundry ofrece Zero Data Retention opcional para cargas sensibles<sup class="ref" data-r="16">[16]</sup>. Elegir ruta y modelo es una decisión de compliance, no solo técnica.</div>
+    <div><i>3</i><b>FinOps del agente.</b> Cada pedido, factura o cliente que el agente toca son tokens facturables<sup class="ref" data-r="5">[5]</sup>. Presupuesta antes de desplegar en equipo. <button class="scb" data-goto="14" type="button" style="margin-top:.5rem">🧮 Calcula tu caso → paso 14</button></div>
+    <div><i>4</i><b>La misma filosofía, dos fabricantes.</b> El MCP de BC nace bloqueando de más — solo lectura hasta que habilitas cada escritura<sup class="ref" data-r="14">[14]</sup> — exactamente el margen de seguridad de este caso<sup class="ref" data-r="1">[1]</sup>. Mi principio de siempre: la IA propone, el humano aprueba lo que se escribe en el ERP.</div>
+  </div>
+
   <h2 style="margin-top:1.6rem">📚 Referencias — todo lo afirmado, trazable</h2>
   <p style="font-size:.9rem">Cada <sup class="ref" data-r="1">[n]</sup> dorado del texto apunta aquí (tócalo donde lo veas: se abre la fuente). Documentación oficial primero; libros y estándares después.</p>
   <div class="src">
@@ -934,6 +951,10 @@ body.lock{overflow:hidden}
     <a class="refitem" id="ref-10" href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener"><b><i class="rn">[10]</i>📚 Ross Anderson — <i>Security Engineering</i> (3.ª ed.)</b> La referencia de la defensa en profundidad · capítulos gratis online<span>cl.cam.ac.uk/archive/rja14/book.html</span></a>
     <a class="refitem" id="ref-11" href="https://en.wikipedia.org/wiki/Swiss_cheese_model" target="_blank" rel="noopener"><b><i class="rn">[11]</i>📚 James Reason — <i>Human Error</i> (Cambridge, 1990)</b> Origen del modelo del queso suizo: capas imperfectas cuyos agujeros no deben alinearse<span>resumen accesible: wikipedia.org/wiki/Swiss_cheese_model</span></a>
     <a class="refitem" id="ref-12" href="https://en.wikipedia.org/wiki/Human_Compatible" target="_blank" rel="noopener"><b><i class="rn">[12]</i>📚 Stuart Russell — <i>Human Compatible</i> (2019)</b> Por qué el control de sistemas de IA capaces es un problema de diseño, no un parche<span>ficha: wikipedia.org/wiki/Human_Compatible</span></a>
+    <a class="refitem" id="ref-14" href="https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/ai/mcp-overview" target="_blank" rel="noopener"><b><i class="rn">[14]</i>Microsoft Learn — Business Central MCP Server</b> Clientes de IA soportados (Copilot Studio, Claude, ChatGPT…), OAuth con Entra, permisos del usuario y solo-lectura por defecto<span>learn.microsoft.com/…/business-central/dev-itpro/ai/mcp-overview</span></a>
+    <a class="refitem" id="ref-15" href="https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" target="_blank" rel="noopener"><b><i class="rn">[15]</i>Microsoft Learn — Anthropic models in Microsoft Online Services</b> Anthropic como subprocesador; UE/EFTA/UK desactivado por defecto y fuera del EU Data Boundary; retención de la clase Mythos hasta 30 días<span>learn.microsoft.com/…/copilot/connect-to-ai-subprocessor</span></a>
+    <a class="refitem" id="ref-16" href="https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/" target="_blank" rel="noopener"><b><i class="rn">[16]</i>Microsoft Azure Blog — Claude en Foundry, disponibilidad general</b> Entra ID, RBAC, facturación CCU/MACC, zonas de datos y Zero Data Retention opcional<span>azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry…</span></a>
+    <a class="refitem" id="ref-17" href="https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/announcing-claude-opus-4-5-in-copilot-studio/" target="_blank" rel="noopener"><b><i class="rn">[17]</i>Microsoft — Modelos Anthropic en Copilot Studio</b> Elección de modelo al crear agentes y opt-in del administrador<span>microsoft.com/…/copilot-studio/announcing-claude-opus-4-5…</span></a>
     <a class="refitem" id="ref-13" href="https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/" target="_blank" rel="noopener"><b><i class="rn">[13]</i>GitHub Changelog — Fable 5 en Copilot</b> Confirma la retención de datos de 30 días exigida por los clasificadores de Fable 5 (resto de modelos: ZDR)<span>github.blog/changelog</span></a>
   </div>
   <div class="contact" id="contacto">
@@ -1138,7 +1159,7 @@ body.lock{overflow:hidden}
   }
 
   /* ── índice bottom-sheet ── */
-  var TITLES=['Portada','Qué es una IA','Por qué no se puede borrar','Los gemelos Fable/Mythos','El jailbreak de Amazon','Export controls','Los clasificadores','El margen de seguridad','Los 3 tipos de jailbreak','El veredicto','El parche >99%','Qué cambió por dentro 🔧','Un CVSS para la IA','El regreso, fecha a fecha','Cuánto cuesta (en €) 💶','Tu app hoy 📱','Referencias y cierre 📚'];
+  var TITLES=['Portada','Qué es una IA','Por qué no se puede borrar','Los gemelos Fable/Mythos','El jailbreak de Amazon','Export controls','Los clasificadores','El margen de seguridad','Los 3 tipos de jailbreak','El veredicto','El parche >99%','Qué cambió por dentro 🔧','Un CVSS para la IA','El regreso, fecha a fecha','Cuánto cuesta (en €) 💶','Tu app hoy 📱','BC, referencias y cierre 🎯'];
   var sheet=document.getElementById('sheet'), shlist=document.getElementById('shlist');
   TITLES.forEach(function(t,i){
     var b=document.createElement('button'); b.type='button'; b.className='it';
@@ -1165,7 +1186,11 @@ body.lock{overflow:hidden}
     10:['Ross Anderson — Security Engineering, 3.ª ed. (capítulos gratis)','https://www.cl.cam.ac.uk/archive/rja14/book.html'],
     11:['James Reason — Human Error (1990) · modelo del queso suizo','https://en.wikipedia.org/wiki/Swiss_cheese_model'],
     12:['Stuart Russell — Human Compatible (2019)','https://en.wikipedia.org/wiki/Human_Compatible'],
-    13:['GitHub Changelog — Fable 5 en Copilot (retención 30 días)','https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/']};
+    13:['GitHub Changelog — Fable 5 en Copilot (retención 30 días)','https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/'],
+    14:['Microsoft Learn — Business Central MCP Server','https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/ai/mcp-overview'],
+    15:['Microsoft Learn — Anthropic models in Microsoft Online Services','https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor'],
+    16:['Microsoft Azure Blog — Claude en Foundry (GA)','https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/'],
+    17:['Microsoft — Modelos Anthropic en Copilot Studio','https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/announcing-claude-opus-4-5-in-copilot-studio/']};
   var pop = document.createElement('div'); pop.id='pop';
   pop.innerHTML='<span class="px" role="button" aria-label="Cerrar">✕</span><div class="pt"></div><a target="_blank" rel="noopener"></a><span class="pu"></span>';
   document.body.appendChild(pop);
@@ -1253,6 +1278,7 @@ body.lock{overflow:hidden}
     paint();
   }
 
+  document.querySelectorAll('[data-goto]').forEach(function(b){ b.addEventListener('click',function(){ go(+b.dataset.goto); }); });
   /* ── hint primera navegación ── */
   var hint = document.getElementById('hint'), hinted = false;
   var goCore = go;
